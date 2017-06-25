@@ -610,7 +610,8 @@
 					"js/common.js",
 					"js/mui.zoom.js",
 					"js/mui.previewimage.js",
-					"css/iconfont_hos.css"
+					"css/iconfont_hos.css",
+					"fonts/iconfont_hos.ttf"
 				],
 				"refer": [
 					"maps/maps_map.html",
@@ -1140,7 +1141,8 @@
 					"css/mui.min.css",
 					"css/health_file.css",
 					"css/search_info.css",
-					"css/iconfont_money.css"
+					"css/iconfont_money.css",
+					"css/iconfont_se.css"
 				],
 				"refer": [
 					"finddoctor/article_brief.html",

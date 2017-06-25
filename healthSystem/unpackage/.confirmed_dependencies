@@ -9,7 +9,8 @@
 			"css/iconfont.css",
 			"css/mui.min.css",
 			"js/mui.previewimage.js",
-			"css/iconfont_money.css"
+			"css/iconfont_money.css",
+			"css/iconfont_foot.css"
 		]
 	},
 	"index.html": {
@@ -23,7 +24,8 @@
 			"css/iconfont.css",
 			"css/mui.min.css",
 			"css/iconfont_money.css",
-			"css/iconfont_foot.css"
+			"css/iconfont_foot.css",
+			"fonts/iconfont.ttf"
 		],
 		"refer": [
 			"main/subindex.html",
@@ -35,7 +37,10 @@
 	"healthfile/know_contents.html": {
 		"resources": [
 			"css/find_doctor.css",
-			"css/app.css"
+			"css/app.css",
+			"js/common.js",
+			"js/mui.min.js",
+			"css/mui.min.css"
 		]
 	},
 	"main/subindex.html": {
@@ -63,7 +68,9 @@
 			"finddoctor/docHP.html",
 			"finddoctor/hosHP.html",
 			"finddoctor/search_doctor_yy.html",
-			"finddoctor/search_hos.html"
+			"finddoctor/search_hos.html",
+			"finddoctor/search_doctor.html",
+			"finddoctor/doclist.html"
 		]
 	},
 	"mine/Mine.html": {
@@ -74,7 +81,8 @@
 		],
 		"refer": [
 			"mine/feedback.html",
-			"mine/account.html"
+			"mine/account.html",
+			"login/login.html"
 		]
 	},
 	"healthfile/Health_File.html": {
@@ -82,7 +90,11 @@
 			"img/healthfile.jpg",
 			"css/iconfont_health_file.css",
 			"fonts/iconfont_health_file.ttf",
-			"css/health_file.css"
+			"css/health_file.css",
+			"css/mui.min.css",
+			"css/iconfont_foot.css",
+			"js/common.js",
+			"js/mui.min.js"
 		],
 		"refer": [
 			"healthfile/know_contents.html"
@@ -144,7 +156,12 @@
 			"css/mui.min.css",
 			"js/mui.previewimage.js",
 			"css/iconfont_money.css",
-			"css/iconfont_hos.css"
+			"css/iconfont_hos.css",
+			"fonts/iconfont_hos.ttf"
+		],
+		"refer": [
+			"finddoctor/hos_brief.html",
+			"finddoctor/officeHP.html"
 		]
 	},
 	"finddoctor/search_hos.html": {
@@ -185,6 +202,129 @@
 			"css/iconfont_se.css",
 			"css/search_info.css",
 			"js/immersed.js"
+		]
+	},
+	"login/login.html": {
+		"resources": [
+			"js/common.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"img/logo.png"
+		]
+	},
+	"finddoctor/hos_brief.html": {
+		"resources": [
+			"css/find_doctor.css",
+			"js/common.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"css/mui.min.css"
+		]
+	},
+	"finddoctor/officeHP.html": {
+		"resources": [
+			"css/find_doctor.css",
+			"js/common.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"css/mui.min.css",
+			"css/health_file.css",
+			"css/iconfont_se.css",
+			"css/search_info.css",
+			"css/iconfont_money.css"
+		],
+		"refer": [
+			"finddoctor/dep_brief.html"
+		]
+	},
+	"finddoctor/search_doctor.html": {
+		"resources": [
+			"css/find_doctor.css",
+			"js/common.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"css/iconfont_health_file.css",
+			"css/mui.min.css",
+			"css/health_file.css",
+			"css/iconfont.css"
+		],
+		"refer": [
+			"finddoctor/search_doctor_jb.html",
+			"finddoctor/search_doctor_xm.html",
+			"finddoctor/search_doctor_yy.html"
+		]
+	},
+	"finddoctor/doclist.html": {
+		"resources": [
+			"css/find_doctor.css",
+			"js/common.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"css/mui.min.css",
+			"css/health_file.css",
+			"css/iconfont_se.css",
+			"css/search_info.css",
+			"css/iconfont_money.css"
+		],
+		"refer": [
+			"finddoctor/docHP.html"
+		]
+	},
+	"finddoctor/search_doctor_jb.html": {
+		"resources": [
+			"js/common.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"finddoctor/illHP.html"
+		]
+	},
+	"finddoctor/illHP.html": {
+		"resources": [
+			"css/find_doctor.css",
+			"js/common.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"css/mui.min.css",
+			"css/health_file.css",
+			"img/hospital.png",
+			"css/iconfont_se.css",
+			"css/search_info.css",
+			"css/iconfont_money.css",
+			"fonts/iconfont_se.ttf"
+		],
+		"refer": [
+			"finddoctor/article_brief.html"
+		]
+	},
+	"finddoctor/article_brief.html": {
+		"resources": [
+			"css/find_doctor.css",
+			"js/common.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"css/mui.min.css"
+		]
+	},
+	"finddoctor/dep_brief.html": {
+		"resources": [
+			"css/find_doctor.css",
+			"js/common.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"css/mui.min.css"
+		]
+	},
+	"finddoctor/search_doctor_xm.html": {
+		"resources": [
+			"js/common.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"css/mui.min.css",
+			"css/mui.indexedlist.css",
+			"js/mui.indexedlist.js"
 		]
 	}
 }
