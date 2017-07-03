@@ -3,7 +3,7 @@ namespace Admin\Model;
 use Think\Model;
 
 class HealthKnowModel extends Model{
-	public function search($perPage=5)
+	public function search($perPage=1)
 	{
 		/* 分页 */
         $count = $this->count();
