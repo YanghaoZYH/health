@@ -6,9 +6,9 @@ define("APP_DEBUG",true);
 
 
 //define("SITE_URL", "http://172.17.32.90:88");
-
 //define("SITE_URL", "http://192.168.43.193:88");
-define("SITE_URL", "http://10.77.117.237:88");
+define("SITE_URL", "http://localhost");
+
 
 
 
@@ -20,5 +20,9 @@ define("JS_URL", SITE_URL . "/health/management/Application/Public/Home/js/");
 define("ADMIN_CSS_URL", SITE_URL . "/health/management/Application/Public/Admin/css/");
 define("ADMIN_IMAGES_URL", SITE_URL . "/health/management/Application/Public/Admin/images/");
 define("ADMIN_JS_URL", SITE_URL . "/health/management/Application/Public/Admin/js/");
+
+//layui文件路径
+define("ADMIN_LAYUI_URL", SITE_URL . "/health/management/Application/Public/layui/");  
+
 require '../ThinkPHP/ThinkPHP.php';
  ?>
