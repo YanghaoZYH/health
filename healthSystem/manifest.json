@@ -1180,7 +1180,8 @@
 					"css/mui.min.css",
 					"css/health_file.css",
 					"css/search_info.css",
-					"css/iconfont_money.css"
+					"css/iconfont_money.css",
+					"css/iconfont_se.css"
 				],
 				"refer": [
 					"finddoctor/article_brief.html",
