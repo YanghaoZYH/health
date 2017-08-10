@@ -634,7 +634,7 @@ textarea.input{height:auto;}
 .fixed-top-right{position:fixed;top:0;right:0;}
 .fixed-bottom-left{position:fixed;bottom:0;left:0;}
 .fixed-bottom-right{position:fixed;bottom:0;right:0;}
-.bread{border-radius:4px;padding:8px 15px;font-size:13px;margin-bottom:15px;color:#999;}
+.bread{border-radius:8px;font-size:15px;color:#999;}
 .bread li{display:inline-block;}
 .bread li:after{content:"\002f";padding:0 8px;color:#ddd;}
 .bread li:last-child:after{content:"";}

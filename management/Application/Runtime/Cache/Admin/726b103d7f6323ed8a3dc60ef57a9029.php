@@ -21,7 +21,7 @@
 <body>
 <form method="post" action="/health/management/Application/index.php/Admin/Auth/listGroup" id="listform">
   <div class="panel admin-panel">
-    <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong></div>
+    <!-- <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong></div> -->
     <div class="padding border-bottom">
       <ul class="search" style="padding-left:10px;">
         <li> <a class="layui-btn layui-btn-primary" onclick="addGroup()"> <i class="layui-icon">&#xe654;</i>  添加权限</a></li>

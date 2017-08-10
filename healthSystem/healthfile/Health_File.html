@@ -5,8 +5,8 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
-		<script src="../js/mui.min.js"></script>
 		<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
 		<link href="../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../css/iconfont_foot.css" />
 		<link rel="stylesheet" type="text/css" href="../css/iconfont_health_file.css" />
@@ -16,7 +16,7 @@
 	</head>
 
 	<body>
-		<div class="mui-content">
+		<div id="pullrefresh" class="mui-content">
 			<img src="../img/healthfile.jpg" style="width: 100%;" />
 			<!--九宫格-->
 
@@ -99,19 +99,58 @@
 			</div>
 			
 		</div>
+		<script src="../js/mui.min.js"></script>
 		<script type="text/javascript">
+			mui.plusReady(function() {});
 	    	mui.init({
 	    		preloadPages:[
 	    		{
 	    			url:'know_contents.html',
-	    			id:'know_contents.html'
+	    			id:'know_contents.html',
+	    			styles: {
+						"render": "always",
+						"popGesture": "hide",
+						"bounce": "vertical",
+						"bounceBackground": "#efeff4",
+					}
 	    		}
 	    		],
+	    		pullRefresh : {
+				    container:"#pullrefresh",//下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+				    auto: true,
+				    down : {
+				      style:'circle',//必选，下拉刷新样式，目前支持原生5+ ‘circle’ 样式
+				      callback :function(){
+					      	if(window.plus && plus.networkinfo.getCurrentType() === plus.networkinfo.CONNECTION_NONE) {
+									plus.nativeUI.toast('似乎已断开与互联网的连接', {
+										verticalAlign: 'top'
+									});
+									return;
+							}
+					      	//下拉刷新获取新的健康知识
+					      	//plus.webview.getWebviewById('healthfile/Health_File.html').reload();
+					      	mui.get('http://' + serverName + '/health/management/Application/index.php/Connector/User/getKnowList', {
+
+							}, function(data) {
+								mui('#pullrefresh').pullRefresh().endPulldown();
+								var knowledge = document.getElementById("knowledge");
+								var item = '';
+								for(var i = 0; i < data.length; i++) {
+									item = item + '<li knowID="' + data[i].know_id + '" class="mui-table-view-cell mui-media"><div class="mui-media-body"><h4>' + data[i].know_title +
+										'</h4><p class="mui-ellipsis">' + data[i].know_title + '</p><span class="put-day">发布日期：</span><span class="day">' + data[i].time + '</span> <span class="mui-pull-right read">阅读量:<span class="readnumber">'+data[i].know_see+'</span></span></div></li>';
+								}
+								//console.log(item);
+								knowledge.innerHTML = item;
+							}, 'json');
+							
+				      }
+				    }
+	    		}
 	    	});
-			mui.plusReady(function() {});
+			
 				mui.get('http://' + serverName + '/health/management/Application/index.php/Connector/User/getKnowList', {
 
-					}, function(data) {
+				}, function(data) {
 						var knowledge = document.getElementById("knowledge");
 						var item = '';
 						for(var i = 0; i < data.length; i++) {
@@ -123,22 +162,27 @@
 					}, 'json');
 					//跳转至健康知识详情
 					var knowHP = null;
+					
 					mui('#knowledge').on('tap','.mui-table-view-cell',function(e){
 						var knowID = this.getAttribute('knowID');
-						//获得医生详情页面
+						var knowSee = this.querySelector('.readnumber').innerHTML;
+						var title = this.querySelector('.mui-ellipsis').innerHTML.trim();
+						var time = this.querySelector('.day').innerHTML;
+						//获得健康知识详情页面
 						if(!knowHP){
 							knowHP = plus.webview.getWebviewById('know_contents.html');
 						}
 						//通知自定义事件
 						mui.fire(knowHP,'knowID',{
-							knowID:knowID
+							knowID:knowID,
+							knowSee:knowSee,
+							title:title,
+							time:time
 						});
-						mui.openWindow({
-							id:'know_contents.html',
-							show:{
-								aniShow:'pop-in'
-							}
-						});
+						
+						setTimeout(function () {
+							knowHP.show("pop-in", 300);
+						},100);
 					});
 					var record= document.getElementById('record');	
 					var history_todoc= document.getElementById('history_todoc');	

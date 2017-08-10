@@ -30,35 +30,14 @@
 <body>
 <form method="post" action="__SELF__" id="listform">
   <div class="panel admin-panel">
-    <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong></div>
+    <!-- <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong></div> -->
     <div class="padding border-bottom">
       <ul class="search" style="padding-left:10px;">
-        <li> <a class="button border-green icon-plus-square-o" href="__MODULE__/Hospital/add"> 添加医院</a>
-        <a class="button border-green icon-plus-square-o" href="__MODULE__/Hospital/uploadExcel"> 批量导入</a> </li>
-        <li>搜索：</li>
-        <li>首页
-          <select name="s_ishome" class="input" onchange="changesearch()" style="width:60px; line-height:17px; display:inline-block">
-            <option value="">选择</option>
-            <option value="1">是</option>
-            <option value="0">否</option>
-          </select>
-          &nbsp;&nbsp;
-          推荐
-          <select name="s_isvouch" class="input" onchange="changesearch()"  style="width:60px; line-height:17px;display:inline-block">
-            <option value="">选择</option>
-            <option value="1">是</option>
-            <option value="0">否</option>
-          </select>
-          &nbsp;&nbsp;
-          置顶
-          <select name="s_istop" class="input" onchange="changesearch()"  style="width:60px; line-height:17px;display:inline-block">
-            <option value="">选择</option>
-            <option value="1">是</option>
-            <option value="0">否</option>
-          </select>
-        <li>
-          <input type="text" placeholder="请输入搜索关键字" name="keywords" class="input" style="width:250px; line-height:17px;display:inline-block" />
-          <a href="javascript:void(0)" class="button border-green icon-search" onclick="changesearch()" > 搜索</a></li>
+        <li> <a class="layui-btn layui-btn-primary" href="__MODULE__/Hospital/add"><i class="layui-icon">&#xe654;</i> 添加医院</a>
+        <a class="layui-btn layui-btn-normal" href="__MODULE__/Hospital/uploadExcel"><i class="fa fa-hand-o-right" aria-hidden="true"></i> 批量导入</a> </li>
+        <li style="margin-left: 500px">
+          <input type="text" placeholder="请输入搜索关键字" name="searchValue" class="input" style="width:250px; line-height:17px;display:inline-block" />
+          <a class="layui-btn layui-btn" style="cursor:pointer" onclick="$('#listform').submit()"><i class="layui-icon">&#xe615;</i>  搜索</a>
       </ul>
     </div>
     <table class="table table-hover text-center">
@@ -70,10 +49,23 @@
         <th width="20%">详细地址</th>
         <th width="10%">创建时间</th>
         <th width="30%">操作</th>
+
       </tr>
+      <?php if(empty($data)): ?>
+      		<tr>
+      			<td></td>
+      			<td></td>
+      			<td></td>	
+      			<td></td>
+      			<td>
+      				<div style="padding:20px"><i class="layui-icon" style="font-size: 30px; color: #22CC77;">&#xe650;</i>空空如也~</div>
+      			</td>
+      		</tr>
+      <?php endif; ?>
     <?php foreach ($data as $k => $v): ?>
         <tr>
-          <td style="text-align:left; padding-left:20px;"><input type="checkbox" name="hos_id[]" value="<?php echo $v['hos_id']; ?>" /><?php echo $v['hos_id']; ?></td>
+
+          <td style="text-align:left; padding-left:20px;"><input type="checkbox" name="hos_id[]" value="<?php echo $v['hos_id']; ?>"/><?php echo $v['hos_id']; ?></td>
           <td><?php echo $v['hos_name']; ?></td>
           <td><?php echo $v['hos_level']; ?></td>
           <td><?php echo $v['hos_address']; ?></td>
@@ -134,12 +126,13 @@
        		</div>
           </td>
         </tr>
-        
     <?php endforeach; ?>
+    
+    	
       <tr>
         <td style="text-align:left; padding:19px 0;padding-left:20px;"><input type="checkbox" id="checkall"/>
           全选 </td>
-        <td colspan="7" style="text-align:left;padding-left:20px;"><a href="javascript:void(0)" class="button border-red icon-trash-o" style="padding:5px 15px;" onclick="DelSelect()"> 删除</a> <a href="javascript:void(0)" style="padding:5px 15px; margin:0 10px;" class="button border-blue icon-edit" onclick="sorts()"> 排序</a>
+        <td colspan="7" style="text-align:left;padding-left:20px;"><a href="javascript:void(0)" class="button border-red icon-trash-o" style="padding:5px 15px;" onclick="DelSelect()"> 删除</a>
       </tr>
       <tr>
       	<td colspan="8">
@@ -158,14 +151,6 @@ layer.photos({
    //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
 });
 
-function showMenu(){
-	layer.open({
-        type: 4,
-        skin: 'layui-layer-lan',
-        shade:0,	
-        content: [$('#menu'), $('#more')]
-    });	
-}
 
 //详情列表框
 function showDialog(id) {
@@ -215,6 +200,7 @@ $("#checkall").click(function(){
 //批量删除
 function DelSelect(){
 	var Checkbox=false;
+	var hos_id = new Array();
 	 $("input[name='hos_id[]']").each(function(){
 	  if (this.checked==true) {		
 		Checkbox=true;	
@@ -222,8 +208,14 @@ function DelSelect(){
 	});
 	if (Checkbox){
 		var t=confirm("您确认要删除选中的内容吗？");
-		if (t==false) return false;		
-		$("#listform").submit();		
+		if (t==false) return false;	
+		var i = 0;
+		$("input[name='hos_id[]']:checked").each(function(){
+			hos_id[i] = this.value;
+			i++;
+		});
+		window.location="__MODULE__/hospital/delete/id/"+hos_id;
+		//$("#listform").submit();		
 	}
 	else{
 		alert("请选择您要删除的内容!");

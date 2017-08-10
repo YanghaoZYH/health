@@ -21,7 +21,7 @@
 <body>
 <form method="post" action="/health/management/Application/index.php/Admin/Auth/listAdmin" id="listform">
   <div class="panel admin-panel">
-    <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong></div>
+    <!-- <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong></div> -->
     <div class="padding border-bottom">
       <ul class="search" style="padding-left:10px;">
         <li> <a class="layui-btn layui-btn-primary" href="/health/management/Application/index.php/Admin/Auth/addAdmin"> <i class="layui-icon">&#xe654;</i>  添加管理员</a></li>

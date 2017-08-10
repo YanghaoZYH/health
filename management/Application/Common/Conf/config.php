@@ -1,9 +1,9 @@
 <?php
 return array(
-	//'配置项'=>'配置值'
-	'URL_MODEL'           => 1,
+    //'配置项'=>'配置值'
+    'URL_MODEL'           => 1,
 
-	/* 数据库设置 */
+    /* 数据库设置 */
     'DB_TYPE'             => 'mysql', // 数据库类型
     'DB_HOST'             => 'localhost', // 服务器地址
     'DB_NAME'             => 'healthsystem', // 数据库名
@@ -28,33 +28,33 @@ return array(
     'IMAGE_CONFIG'        => array(
         'ext'      => array('jpg', 'jpeg', 'png', 'gif'),
         'rootPath' => './Public/Uploads/',
-        'viewPath' => SITE_URL.'/health/management/Application/Public/Uploads/',
+        'viewPath' => SITE_URL . '/health/management/Application/Public/Uploads/',
     ),
 
     /*过滤设置*/
     'DEFAULT_FILTER'      => 'trim,htmlspecialchars',
-    
-	//验证码配置
-	'SMS_CONFIG'			=>array(
-		//验证码
-		'BASE_URL' => 'https://api.miaodiyun.com/20150822/',
-		'ACCOUNT_SID' => '931f6a288e714fb6a1fbee598cb20f4c', 
-		'AUTH_TOKEN' => '9f61022dc82b43728dbbe00279f8ad2d',
-		'CONTENT_TYPE' => 'application/x-www-form-urlencoded',
-		'ACCEPT' => 'application/json',
-	),
 
-    'DEFAULT_MODULE'        =>  'Admin',  // 默认模块
-    'DEFAULT_CONTROLLER'    =>  'Index', // 默认控制器名称
-    'DEFAULT_ACTION'        =>  'index', // 默认操作名称
+    //验证码配置
+    'SMS_CONFIG'          => array(
+        //验证码
+        'BASE_URL'     => 'https://api.miaodiyun.com/20150822/',
+        'ACCOUNT_SID'  => '931f6a288e714fb6a1fbee598cb20f4c',
+        'AUTH_TOKEN'   => '9f61022dc82b43728dbbe00279f8ad2d',
+        'CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+        'ACCEPT'       => 'application/json',
+    ),
+
+    'DEFAULT_MODULE'      => 'Admin', // 默认模块
+    'DEFAULT_CONTROLLER'  => 'Index', // 默认控制器名称
+    'DEFAULT_ACTION'      => 'index', // 默认操作名称
 
     //auth权限管理
-    'AUTH_CONFIG' => array(
-      'AUTH_ON' => false, //认证开关
-      'AUTH_TYPE' => 1, // 认证方式，1为时时认证；2为登录认证。
-      'AUTH_GROUP' => 'auth_group', //用户组数据表名
-      'AUTH_GROUP_ACCESS' => 'auth_group_access', //用户组明细表
-      'AUTH_RULE' => 'auth_rule', //权限规则表
-      'AUTH_USER' => 'manager'//用户信息表
-     )
+    'AUTH_CONFIG'         => array(
+        'AUTH_ON'           => false, //认证开关
+        'AUTH_TYPE'         => 1, // 认证方式，1为时时认证；2为登录认证。
+        'AUTH_GROUP'        => 'auth_group', //用户组数据表名
+        'AUTH_GROUP_ACCESS' => 'auth_group_access', //用户组明细表
+        'AUTH_RULE'         => 'auth_rule', //权限规则表
+        'AUTH_USER'         => 'manager', //用户信息表
+    ),
 );

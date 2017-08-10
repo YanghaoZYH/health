@@ -39,23 +39,27 @@
      <?php  echo authCheck(MODULE_NAME.'/HistoryVis/listHis',cookie('id'),'<li><a href="/health/management/Application/index.php/Admin/HistoryVis/listHis" target="right"><span class="icon-caret-right"></span>历史就诊</a></li>'); ?>
      <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/health/management/Application/index.php/Admin/Relative/listRela" target="right"><span class="icon-caret-right"></span>亲友管理</a></li>'); ?>
   </ul>   
-  <h2><span class="fa fa-hospital-o"></span>医院管理</h2>
+  <h2><span class="fa fa-hospital-o active"></span>医院管理</h2>
   <ul>
-    <li><a href="/health/management/Application/index.php/Admin/Hospital/listHos" target="right"><span class="icon-caret-right"></span>医院管理</a></li>
-    <li><a href="/health/management/Application/index.php/Admin/Department/listDep" target="right"><span class="icon-caret-right"></span>科室管理</a></li>
-    <li><a href="/health/management/Application/index.php/Admin/Illness/listSick" target="right"><span class="icon-caret-right"></span>疾病管理</a></li>        
+    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/health/management/Application/index.php/Admin/Hospital/listHos" target="right"><span class="icon-caret-right"></span>医院管理</a></li>'); ?>
+    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/health/management/Application/index.php/Admin/Department/listDep" target="right"><span class="icon-caret-right"></span>科室管理</a></li>'); ?>
+    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/health/management/Application/index.php/Admin/Illness/listSick" target="right"><span class="icon-caret-right"></span>疾病管理</a></li>'); ?>
+    
+            
   </ul>
   <h2><span class="fa fa-cog"></span>功能管理</h2>
-  <ul> 
-    <li><a href="/health/management/Application/index.php/Admin/Knowledge/listKnow" target="right"><span class="icon-caret-right"></span>健康知识</a></li>
-    <li><a href="/health/management/Application/index.php/Admin/feedback/listAnalyze" target="right"><span class="icon-caret-right"></span>统计分析</a></li>
-    <li><a href="/health/management/Application/index.php/Admin/feedback/listFeedb" target="right"><span class="icon-caret-right"></span>意见反馈</a></li>
+  <ul>
+    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/health/management/Application/index.php/Admin/Knowledge/listKnow" target="right"><span class="icon-caret-right"></span>健康知识</a></li>'); ?>
+    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/health/management/Application/index.php/Admin/feedback/listAnalyze" target="right"><span class="icon-caret-right"></span>统计分析</a></li>'); ?>
+    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/health/management/Application/index.php/Admin/feedback/listFeedb" target="right"><span class="icon-caret-right"></span>意见反馈</a></li>'); ?> 
+
   </ul>
   <h2><span class="fa fa-id-badge"></span>权限管理</h2>
-  <ul> 
-    <li><a href="/health/management/Application/index.php/Admin/Auth/listRule" target="right"><span class="icon-caret-right"></span>权限列表</a></li>
-    <li><a href="/health/management/Application/index.php/Admin/Auth/listGroup" target="right"><span class="icon-caret-right"></span>用户组列表</a></li>
-    <li><a href="/health/management/Application/index.php/Admin/Auth/listAdmin" target="right"><span class="icon-caret-right"></span>管理员列表</a></li>
+  <ul>
+    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/health/management/Application/index.php/Admin/Auth/listRule" target="right"><span class="icon-caret-right"></span>权限列表</a></li>'); ?>
+    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/health/management/Application/index.php/Admin/Auth/listGroup" target="right"><span class="icon-caret-right"></span>用户组列表</a></li>'); ?>
+    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/health/management/Application/index.php/Admin/Auth/listAdmin" target="right"><span class="icon-caret-right"></span>管理员列表</a></li>'); ?> 
+    
   </ul>
 </div>
 <script type="text/javascript">
