@@ -12,6 +12,7 @@
 		<!--<link rel="stylesheet" type="text/css" href="../css/iconfont_hos.css"/>-->
 
 		<style>
+			
 			.jianjie p {
 				float: right;
 				width: 85%;
@@ -247,7 +248,7 @@
 							//简介
 							document.getElementById("daohangtu").src = data.hos_daohang;
 							var li = '';
-							li = li + '<li class="mui-table-view-cell"><a class="mui-navigate-right"><span class="iconfont icon-dizhi tu-wu "></span><p align="center">' + data.hos_address_detail +
+							li = li + '<li class="mui-table-view-cell"><a class=""><span class="iconfont icon-dizhi tu-wu "></span><p align="center">' + data.hos_address_detail +
 								'</p></a></li><li class="mui-table-view-cell mui-disabled"><span class="iconfont icon-iconfont176huiyuandengjieps tu-er "></span><p align="center">' + data.hos_level +
 								'</p></li><li class="mui-table-view-cell mui-disabled"><span class="iconfont icon-chakantieziguanzhu tu-liu "></span><p align="center">关注度：' + data.hos_attention +
 								'</p></li><li id="intro1" class="mui-table-view-cell"><a class="mui-navigate-right"><span class="iconfont icon-intro tu-san "></span><p align="center">医院介绍</p></a></li><li id="daohang" class="mui-table-view-cell"><a class="mui-navigate-right"><span class="iconfont icon-daohangtubiao tu-er "></span><p align="center">院内导航图</p></a></li>';
@@ -370,17 +371,15 @@
 				</div>
 			</div>
 			<!--轮播图-->
-			<div class="box-c ">
+			
 				<p class="box-c-p ">- 简介 -</p>
 				<!--导航图-->
 				<img id="daohangtu" data-preview-src="" data-preview-group="1" src="" style="display: none;"/>
 				<ul id="hosInfo" class="mui-table-view jianjie"></ul>
+			
+			<div class="box-c ">
+				<p class="box-c-p">- 科室-</p>
 			</div>
-
-		</div>
-		<div class="box-c ">
-			<p class="box-c-p">- 科室-</p>
-		</div>
 
 		<div id="depalist" class="box-a">
 			<div id="5" class="box-a-l">
@@ -418,10 +417,12 @@
 		</div>
 
 		<div class="mui-card-footer">
-			<button type="button" id="gohere" class="mui-btn public-color mui-pull-left" style="color: #FFFFFF;margin-left: 20%;">去这里</button>
+			<button type="button" id="gohere" class="mui-btn public-color mui-btn-outlined mui-pull-left" style="width: 35%;color: #FFFFFF; margin-left: 5%;">去这里</button>
 			<!--调用地图模块-->
-			<button id="attention" type="button" class="mui-btn public-color mui-pull-right" style="color: #FFFFFF;margin-right: 20% ;">关注</button>
+			<button id="attention" type="button" class="mui-btn public-color mui-btn-outlined mui-pull-right" style="width: 35%; color: #FFFFFF; margin-left: 10%;">关注</button>
 		</div>
+	</div>
+		
 
 	</body>
 
