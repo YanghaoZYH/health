@@ -27,7 +27,7 @@
 </style>
 </head>
 <body>
-<form method="post" action="/health/management/Application/index.php/Admin/Auth/listRule" id="listform">
+<form method="post" action="/index.php/Admin/Auth/listRule" id="listform">
   <div class="panel admin-panel">
     <!-- <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong></div> -->
     <div class="padding border-bottom">
@@ -63,7 +63,7 @@
 <!-- 添加权限表单 -->
 <div id="ruleForm" style="display: none" class="panel admin-panel">
     <div style="margin-left: 10px" class="body-content">
-    <form method="post" class="form-x" action="/health/management/Application/index.php/Admin/Auth/addRule" name="fileUploadForm" enctype="multipart/form-data">
+    <form method="post" class="form-x" action="/index.php/Admin/Auth/addRule" name="fileUploadForm" enctype="multipart/form-data">
     <input type="hidden" name="pid" value="0">
     <div class="div_tab" style="display:block;">  
       <div class="form-group">
@@ -98,7 +98,7 @@
 <!-- 修改权限表单 -->
 <div id="editRule" style="display: none" class="panel admin-panel">
     <div style="margin-left: 10px" class="body-content">
-    <form method="post" class="form-x" action="/health/management/Application/index.php/Admin/Auth/editRule" name="fileUploadForm" enctype="multipart/form-data">
+    <form method="post" class="form-x" action="/index.php/Admin/Auth/editRule" name="fileUploadForm" enctype="multipart/form-data">
     <input type="hidden" name="id">
     <div class="div_tab" style="display:block;">  
       <div class="form-group">
@@ -135,7 +135,7 @@
 //单个删除
 function del(id){
 	if(confirm("您确定要删除吗?")){
-		window.location="/health/management/Application/index.php/Admin/Auth/delRule/id/"+id;
+		window.location="/index.php/Admin/Auth/delRule/id/"+id;
 	}
 }
 
