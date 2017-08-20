@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
     <link rel="stylesheet" type="text/css" href="../css/iconfont_foot.css"/>
     <link rel="stylesheet" type="text/css" href="../css/iconfont_money.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css"/>
 	</head>
 
 	<body>
@@ -16,6 +17,8 @@
 	<script src="../js/immersed.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/souye.js" ></script>
 	<script src="../js/common.js"></script>
+	 <script src="../js/mui.picker.min.js"></script>
+    <script src="../js/city.data.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
 			mui.init(
 			{
@@ -39,7 +42,7 @@
 					var findhos = document.getElementById('findhos');
 					function geoInf( position ) {
 						var address = position.address;
-						var city = address.city.substring(0,address.city.length-1);
+						var city = address.province.substring(0,address.city.length-1);
 						document.getElementById("city").innerText = city;
 					}
 					plus.geolocation.getCurrentPosition( geoInf, function ( e ) {
@@ -47,9 +50,13 @@
 					}, {geocode:true} );
 					//找医生点击事件
 					find.addEventListener('tap',function(){
+						var diqu = document.getElementById("city").innerHTML;
 						mui.openWindow({
 							url: '../finddoctor/search_doctor.html',
 							id: 'findoctor',
+							extras:{
+						    	diqu:diqu
+						    },
 							show: {
 								aniShow: 'pop-in'
 							},
@@ -59,6 +66,25 @@
 						});
 					});
 					
+					//定位选择
+					(function($, doc) {
+						$.init();
+						$.ready(function() {
+							var cityPicker = new $.PopPicker({
+								layer: 1
+							});
+							cityPicker.setData(cityData);
+							var city = doc.getElementById('city');
+				
+							city.addEventListener('tap', function(event) {
+								cityPicker.show(function(items) {
+									city.innerText = items[0].text.substring(0,2) ;
+									
+								});
+							}, false);
+						});
+					})(mui, document);
+									
 					//健康资讯点击事件
 					finddoctor.addEventListener('tap',function(event){
 						mui.openWindow({
@@ -85,26 +111,45 @@
 						});
 					},false);
 					
-					//科室批量监听
-            		mui('#depalist').on('tap', '.box-a-l', function() {
-						var dep_id = this.getAttribute('id');
+					//更多按钮的监听
+					var morebtn = document.getElementById("more");
+					morebtn.addEventListener('tap',function(event){
 						mui.openWindow({
-							url:'/finddoctor/doclist.html',   
-						    id:'doclist',
-						    extras:{
-						    	dep_id:dep_id
-						    },
-						    show:{
-						    	aniShow: 'pop-in'
+							url: '../finddoctor/test.html',
+							id: 'test',
+							show: {
+								aniShow: 'pop-in'
 							},
-							styles: {
-								popGesture: 'hide'
-							},
-							waiting:{
-								autoShow:true
+							waiting: {
+								autoShow: false
 							}
 						});
-					}); 
+					},false);
+					
+					//科室批量监听
+//          		mui('#depalist').on('tap', '.box-a-l', function() {
+//						var dep_id = this.getAttribute('id');
+//						var diqu = document.getElementById("city").innerHTML;
+//						mui.openWindow({
+//							url:'/finddoctor/doclist.html',   
+//						    id:'doclist',
+//						    extras:{
+//						    	dep_id:dep_id,
+//						    	diqu:diqu
+//						    },
+//						    show:{
+//						    	aniShow: 'pop-in'
+//							},
+//							styles: {
+//								popGesture: 'hide'
+//							},
+//							waiting:{
+//								autoShow:true
+//							}
+//						});
+//					}); 
+					
+					
 					
 				//获取热门医院信息
 				mui.getJSON('http://'+serverName+'/health/management/Application/index.php/Connector/Hos/getHotHos',{},function(data){
@@ -255,10 +300,10 @@ function searchwin(){
 	    <a class=" mui-icon mui-icon-chat mui-pull-right "style="color: #FFFFFF;margin-left: 30px;"></a>
 	    <!--删掉了mui-action-back-->
 	    <div id="search" class="search">
-	    	<!--<div class="mui-input-row mui-search">
+	    	<div class="mui-input-row mui-search">
 	    		<input class=" mui-input-clear" type="search" name="search" id="search" onclick="searchwin()" placeholder="搜疾病，医生，医院，科室" />
-	    	</div>-->
-	    	<img src="../img/search1.png" style="display: inherit; margin: auto; width: 100%;height: 42px;" onclick="searchwin()" />
+	    	</div>
+	    	<!--<img src="../img/search1.png" style="display: inherit; margin: auto; width: 100%;height: 42px;" onclick="searchwin()" />-->
 
 	    </div>   
 	</header>
@@ -317,7 +362,7 @@ function searchwin(){
 	
 		<div id="depalist" class="box-a">
 		    	<div id="5" class="box-a-l">
-		    		<span class="iconfont icon-1 tu-yi"></span>
+		    		<span class="iconfont icon-1-copy tu-yi"></span>
 		    		<p >妇产科</p>
 		    	</div>
 		    	<div id="3" class="box-a-l">
@@ -344,7 +389,7 @@ function searchwin(){
 		    		<span class="iconfont icon-color1 tu-qi"></span>
 		    		<p>儿科</p>
 		    	</div>
-		    	<div class="box-a-l">
+		    	<div id="more" class="box-a-l">
 		    		<span class="iconfont icon-circle-more tu-ba"></span>
 		    		<p>更多</p>
 		    	</div>
@@ -393,7 +438,7 @@ function searchwin(){
 		<p class="box-c-p">- 热门医生 -</p>
 			<div id="demo" style="overflow:hidden; position:relative; height:200px;width:100%;">
 				<div id="demo1">
-					<!--<div class="box-c-a">
+					<div class="box-c-a">
 						<div class="box-c-a-l">
 							<img src="../img/doctor.jpeg" />
 						</div>
@@ -404,7 +449,7 @@ function searchwin(){
 							<span class="mui-icon iconfont icon-pinglun2" style="font-size: 13px;color: #666;"></span><span style="font-size: 13px;color:#05B19F;">1000</span>
 							<span class="mui-icon iconfont icon-dianzan1" style="font-size: 13px;color: #666;"></span><span style="font-size: 13px;color:#05B19F;">1500</span>
 						</div>
-					</div>-->
+					</div>
 				</div>	
 				<div id="demo2"></div>
 			</div>	

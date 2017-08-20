@@ -127,7 +127,7 @@
 						})(mui, document);
 				}
 				//获取位置信息
-				plus.nativeUI.showWaiting();
+				//plus.nativeUI.showWaiting();
 				plus.geolocation.getCurrentPosition( geoInf, function ( e ) {
 					plus.nativeUI.alert( "获取位置信息失败："+e.message );
 				}, {geocode:true} );

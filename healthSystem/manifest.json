@@ -310,7 +310,10 @@
 					"img/hos.jpg",
 					"js/immersed.js",
 					"img/search1.png",
-					"img/jkzx.jpg"
+					"img/jkzx.jpg",
+					"js/mui.picker.min.js",
+					"js/city.data.js",
+					"css/mui.picker.min.css"
 				],
 				"refer": [
 					"main/hosHP.html",
@@ -322,7 +325,8 @@
 					"main/docHP.html",
 					"finddoctor/doclist.html",
 					"finddoctor/findhos.html",
-					"finddoctor/search_hos.html"
+					"finddoctor/search_hos.html",
+					"finddoctor/test.html"
 				],
 				"priority": 0
 			},
@@ -610,7 +614,8 @@
 					"js/common.js",
 					"js/mui.zoom.js",
 					"js/mui.previewimage.js",
-					"css/iconfont_hos.css"
+					"css/iconfont_hos.css",
+					"fonts/iconfont_hos.ttf"
 				],
 				"refer": [
 					"maps/maps_map.html",
@@ -1086,7 +1091,8 @@
 					"css/health_file.css",
 					"css/search_info.css",
 					"css/iconfont_money.css",
-					"css/iconfont_se.css"
+					"css/iconfont_se.css",
+					"fonts/iconfont_se.ttf"
 				],
 				"refer": [
 					"finddoctor/docHP.html"
@@ -1388,6 +1394,39 @@
 					"js/immersed.js"
 				],
 				"refer": [],
+				"priority": 0
+			},
+			"zixun_over.html": {
+				"resources": [
+					"js/mui.min.js",
+					"/js/mui.picker.min.js",
+					"/js/city.data.js",
+					"js/mui.picker.min.js",
+					"js/city.data.js",
+					"js/immersed.js",
+					"css/mui.picker.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"finddoctor/test.html": {
+				"resources": [
+					"fonts/iconfont_money.ttf",
+					"css/find_doctor.css",
+					"js/common.js",
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"css/health_file.css",
+					"css/iconfont_se.css",
+					"css/search_info.css",
+					"css/iconfont_money.css",
+					"fonts/iconfont_se.ttf"
+				],
+				"refer": [
+					"finddoctor/docHP.html"
+				],
 				"priority": 0
 			}
 		},
