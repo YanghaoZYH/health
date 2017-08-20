@@ -417,7 +417,8 @@
 					"css/mui.min.css",
 					"fonts/iconfont_foot.ttf",
 					"css/iconfont_foot.css",
-					"js/common.js"
+					"js/common.js",
+					"js/vue.min.js"
 				],
 				"refer": [
 					"healthfile/medDiary.html",
@@ -427,7 +428,8 @@
 					"healthfile/Friends_file.html",
 					"healthfile/know_contents.html",
 					"healthfile/medDiary2.html",
-					"healthfile/Family_history.html"
+					"healthfile/Family_history.html",
+					"healthfile/file_all.html"
 				],
 				"priority": 0
 			},
@@ -448,7 +450,8 @@
 				"refer": [
 					"inquiry/mydoctor.html",
 					"inquiry/select_file.html",
-					"finddoctor/search_doctor.html"
+					"finddoctor/search_doctor.html",
+					"inquiry/fast_question.html"
 				],
 				"priority": 0
 			},
@@ -545,7 +548,10 @@
 				"resources": [
 					"js/mui.min.js",
 					"css/mui.min.css",
-					"css/search_info.css"
+					"css/search_info.css",
+					"js/common.js",
+					"css/iconfont_se.css",
+					"css/iconfont_money.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -554,7 +560,10 @@
 				"resources": [
 					"js/mui.min.js",
 					"css/mui.min.css",
-					"css/search_info.css"
+					"css/search_info.css",
+					"js/common.js",
+					"css/iconfont_se.css",
+					"css/iconfont_money.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -1096,7 +1105,8 @@
 					"css/app.css",
 					"fonts/mui.ttf",
 					"css/mui.min.css",
-					"js/common.js"
+					"js/common.js",
+					"js/vue.min.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -1109,7 +1119,9 @@
 					"fonts/mui.ttf",
 					"js/common.js"
 				],
-				"refer": [],
+				"refer": [
+					"healthfile/Family_add.html"
+				],
 				"priority": 0
 			},
 			"finddoctor/doclist.html": {
@@ -1181,7 +1193,8 @@
 					"css/health_file.css",
 					"css/search_info.css",
 					"css/iconfont_money.css",
-					"css/iconfont_se.css"
+					"css/iconfont_se.css",
+					"fonts/iconfont_se.ttf"
 				],
 				"refer": [
 					"finddoctor/article_brief.html",
@@ -1291,7 +1304,9 @@
 					"js/mui.min.js",
 					"fonts/mui.ttf",
 					"css/mui.min.css",
-					"css/fast_question.css"
+					"css/fast_question.css",
+					"js/common.js",
+					"css/zixun.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -1453,6 +1468,36 @@
 				"refer": [
 					"finddoctor/zixun.html"
 				],
+				"priority": 0
+			},
+			"healthfile/file_all.html": {
+				"resources": [
+					"img/person_background.png",
+					"js/mui.zoom.js",
+					"js/common.js",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"js/mui.previewimage.js",
+					"img/inquiry.jpg",
+					"js/vue.min.js",
+					"css/heathfile.css"
+				],
+				"refer": [
+					"login/login.html",
+					"healthfile/myfile_person_edit.html",
+					"healthfile/Friend_file_detail.html",
+					"healthfile/Friend_file_add.html"
+				],
+				"priority": 0
+			},
+			"healthfile/Family_add.html": {
+				"resources": [
+					"js/common.js",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"css/heathfile.css"
+				],
+				"refer": [],
 				"priority": 0
 			}
 		},

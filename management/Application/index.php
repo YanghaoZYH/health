@@ -5,7 +5,7 @@ define("APP_DEBUG", true);
 //define('APP_PATH','/Application/index.php/Admin/index/index');
 
 //define("SITE_URL", "http://172.17.32.90:88");
-define("SITE_URL", "http://localhost:80");
+define("SITE_URL", "http://114.115.223.182:80");
 //define("SITE_URL", "http://10.77.117.237");
 
 define("CSS_URL", "/health/management/Application/Public/Home/css/");

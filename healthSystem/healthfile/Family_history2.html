@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/heathfile.css"/>
+		<style type="text/css">
+			.mui-segmented-control .mui-control-item.mui-active{
+				background-color:#06BFAC ;
+			}
+			.mui-segmented-control .mui-control-item{
+				color: #06BFAC ;
+				border-color:#06BFAC ;
+				border-left:1px solid #06BFAC;
+			}
+			.mui-segmented-control{
+				border:1px solid #06BFAC;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav public-color">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">家族史</h1>
+		</header>
+		<div class="mui-content">				
+			<div class="family_history">			
+				<div style="padding: 5px 0px;">
+					<div id="segmentedControl" class="mui-segmented-control">
+						<a class="mui-control-item mui-active" href="#item1">父系氏族</a>
+						<a class="mui-control-item" href="#item2">母系氏族</a>	
+					</div>
+				</div>	
+				<div id="item1" class="mui-control-content mui-active">
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell mui-collapse mui-active">
+							<a class="mui-navigate-right" href="#">
+								<p class="headline">姓名：<span>张三</span>
+									
+									<span class="mui-pull-right detial">详情</span>
+									
+								</p>
+							</a>
+							<ul class="mui-table-view mui-table-view-chevron other_info_res">
+								<li class="mui-table-view-cell">
+									<p>与本人关系：</p>
+									<span>父子</span>
+								</li>
+								<li class="mui-table-view-cell">
+									<p>所患疾病：</p>
+									<span>鼻炎</span>
+								</li>	
+								<li class="mui-table-view-cell">
+					        		<p>
+
+									<button id="edit_health" type="button" class="mui-btn mui-btn-success mui-btn-outlined">
+																修改病史
+									</button>
+									</p>
+					        	</li>
+								
+							</ul>
+						</li>					
+					</ul>
+				</div>
+				<div id="item2" class="mui-control-content">
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell mui-collapse mui-active">
+							<a class="mui-navigate-right" href="#">
+								<p class="headline">姓名：<span>李四</span>
+									
+									<span class="mui-pull-right detial">详情</span>
+									
+								</p>
+							</a>
+							<ul class="mui-table-view mui-table-view-chevron other_info_res">
+								<li class="mui-table-view-cell">
+									<p>与本人关系：</p>
+									<span>母子</span>
+								</li>
+								<li class="mui-table-view-cell">
+									<p>病史：</p>
+									<span>鼻炎</span>
+								</li>	
+								<li class="mui-table-view-cell">
+					        		<p>
+
+									<button id="edit_health" type="button" class="mui-btn mui-btn-success mui-btn-outlined">
+																修改病史
+									</button>
+									</p>
+					        	</li>
+								
+							</ul>
+						</li>					
+					</ul>				
+				</div>	
+				<div id="add" class="submit">
+					<span class="mui-btn mui-btn-success ">添加成员</span>
+				</div>	
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function () {
+				var user_phone = plus.storage.getItem('user_phone');
+			    mui.get('http://' + serverName + '/health/management/Application/index.php/Connector/Health/getFamily',{
+						user_phone:user_phone
+					},function(data){
+						var relative = document.getElementById("relative");
+						var f = '';
+						if(data.result == 0){
+							plus.nativeUI.toast("还未添加家族史信息");
+							f += ' <li class="mui-table-view-cell mui-media"><a class="mui-navigate-right">';
+							f += '<div class="mui-media-body"><h4 id="relation">暂无</h4>';
+							f += '<p>病史:<span id="sick">暂无</span></p></div></a></li>';
+						}
+						for(var i=0;i<data.length;i++){
+							f += ' <li Fid="'+data[i].id+'" class="mui-table-view-cell mui-media"><a class="mui-navigate-right">';
+							f += '<div class="mui-media-body"><h4 id="relation">'+data[i].relation+'</h4>';
+							f += '<p>病史:<span id="sick">'+data[i].sick+'</span></p></div></a></li>';
+						}
+						relative.innerHTML = f;
+					},'json'
+				);
+				
+				document.getElementById("add").addEventListener('tap',function(e){
+					mui.openWindow({
+							url: 'Family_add.html',
+							id: 'Family_add',
+							show: {
+								aniShow: 'pop-in'
+							},
+							waiting: {
+								autoShow: false
+							}
+						});
+				});
+				
+				mui('#relative').on('tap','li',function(e){
+					var Fid = this.getAttribute('Fid');
+					mui.openWindow({
+							url: 'Family_edit.html',
+							id: 'Family_edit',
+							extras:{
+								Fid:Fid
+							},
+							show: {
+								aniShow: 'pop-in'
+							},
+							waiting: {
+								autoShow: false
+							}
+						});
+				});
+			})
+			
+		</script>
+	</body>
+
+</html>
