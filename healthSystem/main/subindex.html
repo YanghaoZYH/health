@@ -52,38 +52,30 @@
 							id: 'findoctor',
 							show: {
 								aniShow: 'pop-in',
-								duration:100
+								duration:300
 							},
-							waiting: {
-								autoShow: false
-							}
 						});
 					});
 					
 					//健康资讯点击事件
 					finddoctor.addEventListener('tap',function(event){
 						mui.openWindow({
-							url: '../finddoctor/search_doctor.html',
-							id: 'findoctor',
+							url: '../information/health_information.html',
+							id: 'health_information',
 							show: {
 								aniShow: 'pop-in',
-								duration:100
-							},
-							waiting: {
-								autoShow: false
+								duration:300
 							}
 						});
 					},false);
+					//找医院
 					findhos.addEventListener('tap',function(event){
 						mui.openWindow({
 							url: '../finddoctor/search_hos.html',
 							id: 'findhos',
 							show: {
 								aniShow: 'pop-in',
-								duration:100
-							},
-							waiting: {
-								autoShow: false
+								duration:300
 							}
 						});
 					},false);

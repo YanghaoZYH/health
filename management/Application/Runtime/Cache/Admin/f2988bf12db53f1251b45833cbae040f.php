@@ -23,42 +23,42 @@
 
   </div>
   <!-- <div class="head-l"><a class="button button-little bg-blue" href="" target="_blank"><span class="icon-home"></span> 前台首页</a> &nbsp;&nbsp;<a class="button button-little bg-red" href="login.html"><span class="icon-power-off"></span> 退出登录</a> </div> -->
-  <div class="head-l"><a class="button button-little bg-red" href="/index.php/Admin/Login/logout"><span class="icon-power-off"></span> 退出登录</a> </div>
+  <div class="head-l"><a class="button button-little bg-red" href="/health/management/Application/index.php/Admin/Login/logout"><span class="icon-power-off"></span> 退出登录</a> </div>
 </div>
 <div class="leftnav" style="overflow-x:scroll">
   <div class="leftnav-title" style="font-size: 16px"><strong><span class="fa fa-bars"></span>菜单列表</strong></div>
   <h2><span class="fa fa-user-circle"></span>用户管理</h2>
   <ul> 
-    <!-- <li><a href="/index.php/Admin/User/listUser" target="right"><span class="icon-caret-right"></span>用户管理</a></li> -->
-    <!-- <li><a href="/index.php/Admin/HistoryVis/listHis" target="right"><span class="icon-caret-right"></span>历史就诊</a></li> -->
-    <!-- <li><a href="/index.php/Admin/User/listUser" target="right"><span class="icon-caret-right"></span>健康记录</a></li> -->
-    <!-- <li><a href="/index.php/Admin/User/listUser" target="right"><span class="icon-caret-right"></span>用药日记</a></li> -->
-    <!-- <li><a href="/index.php/Admin/Relative/listRela" target="right"><span class="icon-caret-right"></span>亲友管理</a></li> -->
-    <?php  echo authCheck(MODULE_NAME.'/User/listUser',cookie('id'),'<li><a href="/index.php/Admin/User/listUser" target="right"><span class="icon-caret-right"></span>用户管理</a></li>'); ?>
+    <!-- <li><a href="/health/management/Application/index.php/Admin/User/listUser" target="right"><span class="icon-caret-right"></span>用户管理</a></li> -->
+    <!-- <li><a href="/health/management/Application/index.php/Admin/HistoryVis/listHis" target="right"><span class="icon-caret-right"></span>历史就诊</a></li> -->
+    <!-- <li><a href="/health/management/Application/index.php/Admin/User/listUser" target="right"><span class="icon-caret-right"></span>健康记录</a></li> -->
+    <!-- <li><a href="/health/management/Application/index.php/Admin/User/listUser" target="right"><span class="icon-caret-right"></span>用药日记</a></li> -->
+    <!-- <li><a href="/health/management/Application/index.php/Admin/Relative/listRela" target="right"><span class="icon-caret-right"></span>亲友管理</a></li> -->
+    <?php  echo authCheck(MODULE_NAME.'/User/listUser',cookie('id'),'<li><a href="/health/management/Application/index.php/Admin/User/listUser" target="right"><span class="icon-caret-right"></span>用户管理</a></li>'); ?>
     
-     <?php  echo authCheck(MODULE_NAME.'/HistoryVis/listHis',cookie('id'),'<li><a href="/index.php/Admin/HistoryVis/listHis" target="right"><span class="icon-caret-right"></span>历史就诊</a></li>'); ?>
-     <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/index.php/Admin/Relative/listRela" target="right"><span class="icon-caret-right"></span>亲友管理</a></li>'); ?>
+     <?php  echo authCheck(MODULE_NAME.'/HistoryVis/listHis',cookie('id'),'<li><a href="/health/management/Application/index.php/Admin/HistoryVis/listHis" target="right"><span class="icon-caret-right"></span>历史就诊</a></li>'); ?>
+     <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/health/management/Application/index.php/Admin/Relative/listRela" target="right"><span class="icon-caret-right"></span>亲友管理</a></li>'); ?>
   </ul>   
   <h2><span class="fa fa-hospital-o active"></span>医院管理</h2>
   <ul>
-    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/index.php/Admin/Hospital/listHos" target="right"><span class="icon-caret-right"></span>医院管理</a></li>'); ?>
-    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/index.php/Admin/Department/listDep" target="right"><span class="icon-caret-right"></span>科室管理</a></li>'); ?>
-    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/index.php/Admin/Illness/listSick" target="right"><span class="icon-caret-right"></span>疾病管理</a></li>'); ?>
+    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/health/management/Application/index.php/Admin/Hospital/listHos" target="right"><span class="icon-caret-right"></span>医院管理</a></li>'); ?>
+    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/health/management/Application/index.php/Admin/Department/listDep" target="right"><span class="icon-caret-right"></span>科室管理</a></li>'); ?>
+    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/health/management/Application/index.php/Admin/Illness/listSick" target="right"><span class="icon-caret-right"></span>疾病管理</a></li>'); ?>
     
             
   </ul>
   <h2><span class="fa fa-cog"></span>功能管理</h2>
   <ul>
-    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/index.php/Admin/Knowledge/listKnow" target="right"><span class="icon-caret-right"></span>健康知识</a></li>'); ?>
-    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/index.php/Admin/feedback/listAnalyze" target="right"><span class="icon-caret-right"></span>统计分析</a></li>'); ?>
-    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/index.php/Admin/feedback/listFeedb" target="right"><span class="icon-caret-right"></span>意见反馈</a></li>'); ?> 
+    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/health/management/Application/index.php/Admin/Knowledge/listKnow" target="right"><span class="icon-caret-right"></span>健康知识</a></li>'); ?>
+    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/health/management/Application/index.php/Admin/feedback/listAnalyze" target="right"><span class="icon-caret-right"></span>统计分析</a></li>'); ?>
+    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/health/management/Application/index.php/Admin/feedback/listFeedb" target="right"><span class="icon-caret-right"></span>意见反馈</a></li>'); ?> 
 
   </ul>
   <h2><span class="fa fa-id-badge"></span>权限管理</h2>
   <ul>
-    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/index.php/Admin/Auth/listRule" target="right"><span class="icon-caret-right"></span>权限列表</a></li>'); ?>
-    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/index.php/Admin/Auth/listGroup" target="right"><span class="icon-caret-right"></span>用户组列表</a></li>'); ?>
-    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/index.php/Admin/Auth/listAdmin" target="right"><span class="icon-caret-right"></span>管理员列表</a></li>'); ?> 
+    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/health/management/Application/index.php/Admin/Auth/listRule" target="right"><span class="icon-caret-right"></span>权限列表</a></li>'); ?>
+    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/health/management/Application/index.php/Admin/Auth/listGroup" target="right"><span class="icon-caret-right"></span>用户组列表</a></li>'); ?>
+    <?php  echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="/health/management/Application/index.php/Admin/Auth/listAdmin" target="right"><span class="icon-caret-right"></span>管理员列表</a></li>'); ?> 
     
   </ul>
 </div>

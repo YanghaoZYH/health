@@ -20,8 +20,11 @@
 				<form class="mui-input-group public-edit outline_add">
 					<div class="">
 						<div class="mui-input-row">
-							<label>姓名：</label>
-							<input id="relation" class="mui-input-clear"  type="text">
+							<label>氏族：</label>
+							<select id="clan">
+								<option value="父系">父系</option>
+								<option value="母系">母系</option>
+							</select>
 						</div>
 					</div>
 					<div class="">
@@ -53,6 +56,7 @@
 				mui.post('http://' + serverName + '/health/management/Application/index.php/Connector/Health/addFamily',{
 						user_phone:user_phone,
 						relation:document.getElementById("relation").value,
+						clan:document.getElementById("clan").value,
     					sick:document.getElementById("sick").value,
 					},function(data){
 						if(data.result==1){
