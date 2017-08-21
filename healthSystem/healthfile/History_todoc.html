@@ -526,6 +526,7 @@
 				}
 				var relative_id = 0;
 				var detailPage = null;
+				//线下就诊记录详情
 				mui(".outline_history").on('tap', '.detail_outline', function(event) {
 					var seecaseID = this.getAttribute('seecaseID');
 					mui.openWindow({
@@ -542,6 +543,7 @@
 				});
 				
 				//console.log(relative_id);
+				//添加线下就诊记录
 				add_outline.addEventListener('tap', function(event) {
 					mui.openWindow({
 						url: 'outline_add.html',
