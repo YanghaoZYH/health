@@ -903,7 +903,8 @@
 					"js/mui.min.js",
 					"css/mui.min.css",
 					"fonts/iconfont_account.ttf",
-					"css/iconfont_account.css"
+					"css/iconfont_account.css",
+					"js/common.js"
 				],
 				"refer": [],
 				"priority": 0

@@ -1,1 +1,58 @@
-null
+{
+	"index.html": {
+		"resources": [
+			"fonts/iconfont_money.ttf",
+			"css/souye.css",
+			"js/common.js",
+			"fonts/iconfont_foot.ttf",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"fonts/iconfont.ttf",
+			"css/iconfont_money.css",
+			"css/iconfont_foot.css",
+			"main/docHomepage.html"
+		],
+		"refer": [
+			"main/docHomepage.html",
+			"login/login.html",
+			"mine/Mine.html",
+			"message/Message.html",
+			"inquiry/Inquiry.html"
+		]
+	},
+	"main/docHomepage.html": {
+		"resources": [
+			"img/person_background.png",
+			"img/inquiry.jpg",
+			"css/heathfile.css",
+			"js/souye.js"
+		]
+	},
+	"login/login.html": {
+		"resources": [
+			"img/logo.png"
+		]
+	},
+	"message/Message.html": {
+		"resources": [
+			"css/header.css"
+		]
+	},
+	"mine/Mine.html": {
+		"resources": [
+			"css/iconfont_mine.css",
+			"fonts/iconfont_mine.ttf"
+		]
+	},
+	"inquiry/Inquiry.html": {
+		"resources": [
+			"inquiry/inquiry2.html",
+			"css/header.css"
+		],
+		"refer": [
+			"inquiry/inquiry2.html"
+		]
+	}
+}
