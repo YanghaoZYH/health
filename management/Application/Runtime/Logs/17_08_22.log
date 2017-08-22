@@ -4409,3 +4409,142 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTrace [ RunTime:0.000029s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000067s ]
 
+[ 2017-08-22T02:02:46+08:00 ] 192.168.0.59 /health/management/Application/index.php/Connector/Doc/getHotDoc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000772s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000061s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000161s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000054s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\XAMPP2\htdocs\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP2\htdocs\health\management\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.003916s ]
+SQL: SELECT a.*,b.hos_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id ORDER BY doc_attention desc LIMIT 8   [ RunTime:0.000781s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000044s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000123s ]
+
+[ 2017-08-22T02:02:53+08:00 ] 192.168.0.59 /health/management/Application/index.php/Connector/Doc/getHotDoc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000559s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000037s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000124s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000276s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000063s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\XAMPP2\htdocs\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP2\htdocs\health\management\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.005264s ]
+SQL: SELECT a.*,b.hos_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id ORDER BY doc_attention desc LIMIT 8   [ RunTime:0.000949s ]
+
+[ 2017-08-22T02:07:32+08:00 ] 192.168.0.59 /health/management/Application/index.php/Connector/Doc/getHotDoc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000685s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000110s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000038s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\XAMPP2\htdocs\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP2\htdocs\health\management\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.003168s ]
+SQL: SELECT a.*,b.hos_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id ORDER BY doc_attention asc LIMIT 8   [ RunTime:0.000802s ]
+
+[ 2017-08-22T02:09:55+08:00 ] 192.168.0.59 /health/management/Application/index.php/Connector/Doc/getHotDoc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000021s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000167s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000473s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000062s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\XAMPP2\htdocs\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP2\htdocs\health\management\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.002700s ]
+SQL: SELECT a.*,b.hos_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id ORDER BY doc_attention asc LIMIT 8   [ RunTime:0.002257s ]
+
+[ 2017-08-22T02:10:08+08:00 ] 192.168.0.59 /health/management/Application/index.php/Connector/Doc/getHotDoc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000021s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000031s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000074s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000024s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\XAMPP2\htdocs\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP2\htdocs\health\management\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.002321s ]
+SQL: SELECT a.*,b.hos_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id ORDER BY doc_attention desc LIMIT 8   [ RunTime:0.000584s ]
+
+[ 2017-08-22T02:11:24+08:00 ] 192.168.0.59 /health/management/Application/index.php/Connector/Doc/getHotDoc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000662s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000089s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000027s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\XAMPP2\htdocs\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP2\htdocs\health\management\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.003711s ]
+SQL: SELECT a.*,b.hos_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id ORDER BY doc_attention desc LIMIT 8   [ RunTime:0.000731s ]
+
+[ 2017-08-22T02:13:38+08:00 ] 192.168.0.59 /health/management/Application/index.php/Connector/Doc/getHotDoc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000358s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000021s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000037s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000095s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000026s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\XAMPP2\htdocs\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP2\htdocs\health\management\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.002217s ]
+SQL: SELECT a.*,b.hos_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id ORDER BY doc_attention desc LIMIT 8   [ RunTime:0.000501s ]
+
+[ 2017-08-22T10:16:15+08:00 ] 192.168.0.59 /health/management/Application/index.php/Connector/Hos/getNearbyHos
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000685s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000021s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000035s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000082s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000024s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP2\htdocs\health\management\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `hospital_info` [ RunTime:0.003941s ]
+SQL: SELECT * FROM `hospital_info` WHERE (  (`hos_longitude` BETWEEN '-0.089852397220775' AND '0.089852397220775' ) ) AND (  (`hos_latitude` BETWEEN '-0.089852397220775' AND '0.089852397220775' ) )  [ RunTime:0.003292s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000032s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000073s ]
+
+[ 2017-08-22T10:17:02+08:00 ] 192.168.0.59 /health/management/Application/index.php/Connector/Hos/getNearbyHos
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000317s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000021s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000034s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000078s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000023s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP2\htdocs\health\management\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `hospital_info` [ RunTime:0.004433s ]
+SQL: SELECT * FROM `hospital_info` WHERE (  (`hos_longitude` BETWEEN '120.24366176065' AND '120.45181823935' ) ) AND (  (`hos_latitude` BETWEEN '30.219193602779' AND '30.398898397221' ) )  [ RunTime:0.000526s ]
+

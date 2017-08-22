@@ -20,7 +20,7 @@ class DocController extends Controller{
         for ($i=0; $i <count($data) ; $i++) { 
             $data[$i]['doc_img'] = $ic['viewPath'].$data[$i]['doc_img'];
         }
-    	//dump($data);die;
+    	dump($data);die;
     	echo json_encode($data);
     }
 

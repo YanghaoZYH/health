@@ -61,13 +61,14 @@
 				-webkit-box-orient: vertical;
 				overflow: hidden;
 			}
-			
 			/*图片预览CSS*/
+			
 			.mui-preview-image.mui-fullscreen {
 				position: fixed;
 				z-index: 20;
 				background-color: #000;
 			}
+			
 			.mui-preview-header,
 			.mui-preview-footer {
 				position: absolute;
@@ -75,14 +76,17 @@
 				left: 0;
 				z-index: 10;
 			}
+			
 			.mui-preview-header {
 				height: 44px;
 				top: 0;
 			}
+			
 			.mui-preview-footer {
 				height: 50px;
 				bottom: 0px;
 			}
+			
 			.mui-preview-header .mui-preview-indicator {
 				display: block;
 				line-height: 25px;
@@ -94,6 +98,7 @@
 				border-radius: 12px;
 				font-size: 16px;
 			}
+			
 			.mui-preview-image {
 				display: none;
 				-webkit-animation-duration: 0.5s;
@@ -101,19 +106,23 @@
 				-webkit-animation-fill-mode: both;
 				animation-fill-mode: both;
 			}
+			
 			.mui-preview-image.mui-preview-in {
 				-webkit-animation-name: fadeIn;
 				animation-name: fadeIn;
 			}
+			
 			.mui-preview-image.mui-preview-out {
 				background: none;
 				-webkit-animation-name: fadeOut;
 				animation-name: fadeOut;
 			}
+			
 			.mui-preview-image.mui-preview-out .mui-preview-header,
 			.mui-preview-image.mui-preview-out .mui-preview-footer {
 				display: none;
 			}
+			
 			.mui-zoom-scroller {
 				position: absolute;
 				display: -webkit-box;
@@ -134,26 +143,32 @@
 				margin: 0;
 				-webkit-backface-visibility: hidden;
 			}
+			
 			.mui-zoom {
 				-webkit-transform-style: preserve-3d;
 				transform-style: preserve-3d;
 			}
+			
 			.mui-slider .mui-slider-group .mui-slider-item img {
 				width: auto;
 				height: auto;
 				max-width: 100%;
 				max-height: 100%;
 			}
+			
 			.mui-android-4-1 .mui-slider .mui-slider-group .mui-slider-item img {
 				width: 100%;
 			}
+			
 			.mui-android-4-1 .mui-slider.mui-preview-image .mui-slider-group .mui-slider-item {
 				display: inline-table;
 			}
+			
 			.mui-android-4-1 .mui-slider.mui-preview-image .mui-zoom-scroller img {
 				display: table-cell;
 				vertical-align: middle;
 			}
+			
 			.mui-preview-loading {
 				position: absolute;
 				width: 100%;
@@ -162,9 +177,11 @@
 				left: 0;
 				display: none;
 			}
+			
 			.mui-preview-loading.mui-active {
 				display: block;
 			}
+			
 			.mui-preview-loading .mui-spinner-white {
 				position: absolute;
 				top: 50%;
@@ -174,10 +191,12 @@
 				height: 50px;
 				width: 50px;
 			}
+			
 			.mui-preview-image img.mui-transitioning {
 				-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
 				transition: transform 0.5s ease, opacity 0.5s ease;
 			}
+			
 			@-webkit-keyframes fadeIn {
 				0% {
 					opacity: 0;
@@ -186,6 +205,7 @@
 					opacity: 1;
 				}
 			}
+			
 			@keyframes fadeIn {
 				0% {
 					opacity: 0;
@@ -194,6 +214,7 @@
 					opacity: 1;
 				}
 			}
+			
 			@-webkit-keyframes fadeOut {
 				0% {
 					opacity: 1;
@@ -202,6 +223,7 @@
 					opacity: 0;
 				}
 			}
+			
 			@keyframes fadeOut {
 				0% {
 					opacity: 1;
@@ -210,6 +232,7 @@
 					opacity: 0;
 				}
 			}
+			
 			p img {
 				max-width: 100%;
 				height: auto;
@@ -283,9 +306,9 @@
 			</div>
 
 		</div>
-		<div class="mui-card-footer">
-			<button id="zixun" type="button" class="mui-btn mui-btn-success mui-btn-outlined mui-pull-left" style="width: auto;"><span class="mui-icon iconfont icon-jinqian1"></span>  付费咨询：<span id="fee2"></span><span>元/小时</span></button>
-			<button id="attention" type="button" class="mui-btn mui-btn-success mui-btn-outlined mui-pull-right" style="width: auto%;"><span class=" mui-icon iconfont icon-guanzhu1"></span>  添加关注</button>
+		<div id="buttons" class="mui-card-footer">
+			<button id="zixun" type="button" class="mui-btn public-color mui-btn-outlined mui-pull-left" style="width: auto;color: #FFFFFF; margin-left: 5%;">  付费咨询：<span style="color: #FFFFFF;" id="fee2"></span><span style="color: #FFFFFF;">元/小时</span></button>
+			<button id="attention" type="button" class="mui-btn public-color mui-btn-outlined mui-pull-right" style="width: auto; color: #FFFFFF; margin-left: 10%;"><span style="color: #FFFFFF;" class=" mui-icon iconfont icon-guanzhu1"></span>  添加关注</button>
 		</div>
 	</body>
 
@@ -307,7 +330,7 @@
 				user_phone = plus.storage.getItem('user_phone');
 				//plus.nativeUI.showWaiting();
 			});
-			
+
 			var doc_id = null;
 			//添加detailPage自定义事件监听
 			window.addEventListener('docID', function(event) {
@@ -331,39 +354,41 @@
 
 					doc_phone = data.doc_phone;
 					doc_name = data.doc_name;
+					//显示评价
+					get_pingjia();
 					//判断是否已关注
 					var attention = document.getElementById("attention");
 					mui.ajax('http://' + serverName + '/health/management/Application/index.php/Connector/User/isAttention', {
-								data: {
-									doc_phone: doc_phone,
-									user_phone: user_phone
-								},
-								dataType: 'json',
-								type: 'POST',
-								timeout: 20000,
-								success: function(data) {
-									//{"reslut":1}表示成功
-									if(data.result == 2){
-										var s = '';
-										s = '<span class=" mui-icon iconfont icon-guanzhu1"></span>  已关注';
-										attention.innerHTML = s;
-									}else if((data.result == 1)){
-										var s = '';
-										s = '<span class=" mui-icon iconfont icon-guanzhu1"></span>  添加关注';
-										attention.innerHTML = s;
-									}
-									
-									plus.nativeUI.closeWaiting();
-									
-								},
-								error: function() {
-									plus.nativeUI.toast("请检查您的网络");
-									plus.nativeUI.closeWaiting();
-								}
+						data: {
+							doc_phone: doc_phone,
+							user_phone: user_phone
+						},
+						dataType: 'json',
+						type: 'POST',
+						timeout: 20000,
+						success: function(data) {
+							//{"reslut":1}表示成功
+							if(data.result == 2) {
+								var s = '';
+								s = '<span style="color: #FFFFFF;" class=" mui-icon iconfont icon-guanzhu1"></span>  已关注';
+								attention.style.backgroundColor = "grey";
+								attention.innerHTML = s;
+							} else if((data.result == 1)) {
+								var s = '';
+								s = '<span style="color: #FFFFFF;" class=" mui-icon iconfont icon-guanzhu1"></span>  添加关注';
+								attention.style.backgroundColor = "#06BFAC";
+								attention.innerHTML = s;
+							}
+
+							plus.nativeUI.closeWaiting();
+
+						},
+						error: function() {
+							plus.nativeUI.toast("请检查您的网络");
+							plus.nativeUI.closeWaiting();
+						}
 					})
-					
-					//显示评价
-					get_pingjia();
+
 				}, 'json');
 
 				//医生简介详情
@@ -418,7 +443,6 @@
 
 				//咨询按钮监听
 				document.getElementById("zixun").addEventListener('tap', function() {
-					console.log("asdas");
 					if(islogin()) {
 						mui.openWindow({
 							url: 'pay.html',
@@ -451,11 +475,10 @@
 						plus.nativeUI.toast("请先登录");
 					}
 				});
-				
-				
+
 				//关注按钮监听
 				var attention = document.getElementById("attention");
-				attention.addEventListener('tap', function() {
+				mui('#buttons').on('tap','#attention',function() {
 					var follower = document.getElementById("follower");
 					if(islogin()) {
 						mui.ajax('http://' + serverName + '/health/management/Application/index.php/Connector/User/attention_doc', {
@@ -468,17 +491,18 @@
 							timeout: 10000,
 							success: function(data) {
 								//{"reslut":1}表示成功
-								if(data.result == 1){
+								if(data.result == 1) {
 									plus.nativeUI.toast(data.data);
 									var newnum = parseInt(follower.innerHTML) + 1;
 									follower.innerHTML = newnum;
 									var s = '';
-									s = '<span class=" mui-icon iconfont icon-guanzhu1"></span>  已关注';
+									s = '<span style="color: #FFFFFF;" class=" mui-icon iconfont icon-guanzhu1"></span>  已关注';
+									attention.style.backgroundColor = "grey";
 									attention.innerHTML = s;
-								}else if(data.result == 2){
+								} else if(data.result == 2) {
 									plus.nativeUI.toast(data.data);
 								}
-								
+
 							},
 							error: function() {
 								plus.nativeUI.toast("请检查您的网络");
@@ -498,11 +522,11 @@
 						});
 						plus.nativeUI.toast("请先登录");
 					}
-
+					mui("#buttons").off('tap','#attention');
 				});
 			});
-			
-}
+
+		}
 	</script>
 
 </html>

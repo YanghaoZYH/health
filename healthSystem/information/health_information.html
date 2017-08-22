@@ -19,12 +19,44 @@
 			}
 		</style>
 	</head>
-	<script type="text/javascript" src="../js/mui.min.js"></script>
 	<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript">
+	<body>
+		<header class="mui-bar mui-bar-nav public-color">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">健康资讯</h1>
+		</header>
+		<div id="pullrefresh" class="mui-content">
+			<ul id="knowledge" class="mui-table-view">
+				<!--<li knowID="' + data[i].know_id + '" class="mui-table-view-cell mui-media">
+					<div class="mui-media-body">
+						<h4>xxxx</h4>
+						<p class="mui-ellipsis">'xxx '</p>
+						<span class="put-day">发布日期：</span>
+						<span class="day">' xxx '</span>
+						<span class="mui-pull-right read">阅读量:
+								<span class="readnumber">'xxxx'</span></span>
+					</div>
+				</li>
+				<li knowID="' + data[i].know_id + '" class="mui-table-view-cell mui-media">
+		
+					<div class="mui-media-body">
+						<h4>xxxx</h4>
+						<p class="mui-ellipsis">'xxx '</p>
+						<span class="put-day">发布日期：</span>
+						<span class="day">' xxx '</span>
+						<span class="mui-pull-right read">阅读量:
+								<span class="readnumber">'xxxx'</span></span>
+					</div>
+				</li>-->
+			</ul>
+		</div>
+
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+		mui.plusReady(function() {});
 		mui.init({
 				preloadPages: [{
-					url: 'know_contents.html',
+					url: '../healthfile/know_contents.html',
 					id: 'know_contents.html',
 					styles: {
 						"render": "always",
@@ -46,7 +78,6 @@
 								return;
 							}
 							//下拉刷新获取新的健康知识
-							//plus.webview.getWebviewById('healthfile/Health_File.html').reload();
 							mui.get('http://' + serverName + '/health/management/Application/index.php/Connector/User/getKnowList', {
 
 							}, function(data) {
@@ -65,7 +96,7 @@
 					}
 				}
 			});
-		mui.plusReady(function() {
+		
 			//获取健康知识列表
 			mui.get('http://' + serverName + '/health/management/Application/index.php/Connector/User/getKnowList', {
 
@@ -102,44 +133,7 @@
 					knowHP.show("pop-in", 300);
 				}, 100);
 			});
-		});
 	</script>
-
-	<body>
-		<header class="mui-bar mui-bar-nav public-color">
-			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-			<h1 class="mui-title">健康资讯</h1>
-		</header>
-		<div class="mui-content">
-			<ul id="knowledge" class="mui-table-view">
-				<!--<li knowID="' + data[i].know_id + '" class="mui-table-view-cell mui-media">
-					<div class="mui-media-body">
-						<h4>xxxx</h4>
-						<p class="mui-ellipsis">'xxx '</p>
-						<span class="put-day">发布日期：</span>
-						<span class="day">' xxx '</span>
-						<span class="mui-pull-right read">阅读量:
-								<span class="readnumber">'xxxx'</span></span>
-					</div>
-				</li>
-				<li knowID="' + data[i].know_id + '" class="mui-table-view-cell mui-media">
-		
-					<div class="mui-media-body">
-						<h4>xxxx</h4>
-						<p class="mui-ellipsis">'xxx '</p>
-						<span class="put-day">发布日期：</span>
-						<span class="day">' xxx '</span>
-						<span class="mui-pull-right read">阅读量:
-								<span class="readnumber">'xxxx'</span></span>
-					</div>
-				</li>-->
-			</ul>
-		</div>
-
-		<script src="../js/mui.min.js"></script>
-		<script type="text/javascript">
-			mui.init();
-		</script>
 	</body>
 
 </html>
