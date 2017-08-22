@@ -42,7 +42,7 @@
 					var findhos = document.getElementById('findhos');
 					function geoInf( position ) {
 						var address = position.address;
-						var city = address.province.substring(0,address.city.length-1);
+						var city = address.city.substring(0,address.city.length-1);
 						document.getElementById("city").innerText = city;
 					}
 					plus.geolocation.getCurrentPosition( geoInf, function ( e ) {
@@ -59,11 +59,8 @@
 						    },
 							show: {
 								aniShow: 'pop-in',
-								duration:100
+								duration:300
 							},
-							waiting: {
-								autoShow: false
-							}
 						});
 					});
 					
@@ -89,27 +86,22 @@
 					//健康资讯点击事件
 					finddoctor.addEventListener('tap',function(event){
 						mui.openWindow({
-							url: '../finddoctor/search_doctor.html',
-							id: 'findoctor',
+							url: '../information/health_information.html',
+							id: 'health_information',
 							show: {
 								aniShow: 'pop-in',
-								duration:100
-							},
-							waiting: {
-								autoShow: false
+								duration:300
 							}
 						});
 					},false);
+					//找医院
 					findhos.addEventListener('tap',function(event){
 						mui.openWindow({
 							url: '../finddoctor/search_hos.html',
 							id: 'findhos',
 							show: {
 								aniShow: 'pop-in',
-								duration:100
-							},
-							waiting: {
-								autoShow: false
+								duration:300
 							}
 						});
 					},false);
@@ -131,7 +123,7 @@
 									autoShow: false
 								}
 							});
-						}else{
+						}else{ 
 							mui.openWindow({
 								url:'/finddoctor/doclist.html',   
 							    id:'doclist',

@@ -450,7 +450,24 @@ class UserController extends Controller
 		}
 		echo json_encode($res);
     }
-    
+    //判断是否关注医生
+    public function isAttention(){
+        $data1['doc_phone']=I('post.doc_phone');
+        $data2['user_phone']=I('post.user_phone');
+        //我关注的医生表查询记录
+        $mess=M('attention_doc')
+               ->where(array(
+                    'doc_phone' => array('eq', $data1['doc_phone']),
+                    'user_phone' => array('eq', $data2['user_phone'])
+                 ))
+               ->find();
+        if($mess){
+            $res['result']=2;
+        }else{
+            $res['result']=1;
+        }
+        echo json_encode($res);
+    }
     //关注医生
     public function attention_doc(){
     	$data1['doc_phone']=I('post.doc_phone');
@@ -464,7 +481,7 @@ class UserController extends Controller
 		       ->find();
 		//没有记录，添加关注，有记录，不添加新的关注
 		if($mess){
-			$res['result']=0;
+			$res['result']=2;
 			$res['data']='您已关注过';
 		}else{
 			//关注表添加记录
