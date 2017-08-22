@@ -1183,7 +1183,8 @@
 					"finddoctor/docHP.html",
 					"finddoctor/article_brief.html",
 					"finddoctor/doclist.html",
-					"finddoctor/search_doctor_yy.html"
+					"finddoctor/search_doctor_yy.html",
+					"healthfile/know_contents.html"
 				],
 				"priority": 0
 			},
@@ -1459,7 +1460,9 @@
 					"css/mui.picker.min.css",
 					"css/iconfont_se.css",
 					"css/search_info.css",
-					"js/immersed.js"
+					"js/immersed.js",
+					"fonts/mui.ttf",
+					"fonts/iconfont_se.ttf"
 				],
 				"refer": [],
 				"priority": 0
@@ -1539,7 +1542,9 @@
 					"css/mui.min.css",
 					"css/health_file.css"
 				],
-				"refer": [],
+				"refer": [
+					"healthfile/know_contents.html"
+				],
 				"priority": 0
 			},
 			"healthfile/Medicine_remind.html": {

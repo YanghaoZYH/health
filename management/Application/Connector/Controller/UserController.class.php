@@ -190,7 +190,6 @@ class UserController extends Controller
         $model = D('health_know');
         $data  = $model
             ->order('know_see desc')
-            ->limit(5)
             ->select();
         foreach ($data as $k => $v) {
             $data[$k]['know_content'] = htmlspecialchars_decode($v['know_content']);
@@ -468,6 +467,26 @@ class UserController extends Controller
         }
         echo json_encode($res);
     }
+    
+    //判断是否关注医院
+    public function isAttentionHos(){
+        $data1['hos_id']=I('post.hos_id');
+        $data2['user_phone']=I('post.user_phone');
+        //我关注的医生表查询记录
+        $mess=M('attention_hos')
+               ->where(array(
+                    'hos_id' => array('eq', $data1['hos_id']),
+                    'user_phone' => array('eq', $data2['user_phone'])
+                 ))
+               ->find();
+        if($mess){
+            $res['result']=2;
+        }else{
+            $res['result']=1;
+        }
+        echo json_encode($res);
+    }
+
     //关注医生
     public function attention_doc(){
     	$data1['doc_phone']=I('post.doc_phone');
