@@ -1555,10 +1555,14 @@
 					"css/app.css",
 					"css/iconfont_health_file.css",
 					"css/mui.min.css",
-					"css/heathfile.css"
+					"css/heathfile.css",
+					"fonts/iconfont_health_file.ttf",
+					"fonts/mui.ttf"
 				],
 				"refer": [
-					"healthfile/Medicine_add_remind.html"
+					"healthfile/Medicine_add_remind.html",
+					"finddoctor/test.html",
+					"healthfile/Medicine_detail.html"
 				],
 				"priority": 0
 			},
@@ -1585,11 +1589,26 @@
 					"css/health_file.css",
 					"css/iconfont_se.css",
 					"css/search_info.css",
-					"css/iconfont_money.css"
+					"css/iconfont_money.css",
+					"fonts/mui.ttf",
+					"fonts/iconfont_money.ttf",
+					"fonts/iconfont_se.ttf"
 				],
 				"refer": [
 					"finddoctor/docHP.html"
 				],
+				"priority": 0
+			},
+			"healthfile/Medicine_detail.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"css/mui.min.css",
+					"css/heathfile.css",
+					"js/common.js",
+					"fonts/mui.ttf"
+				],
+				"refer": [],
 				"priority": 0
 			}
 		},
