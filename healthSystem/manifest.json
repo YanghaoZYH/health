@@ -239,8 +239,8 @@
 					"mdpi": "", /*普通屏启动图片，分辨率：240x282*/
 					"ldpi": "", /*大屏启动图片，分辨率：320x442*/
 					"hdpi": "C:/Users/eric/Desktop/qidong.png", /*高分屏启动图片，分辨率：480x762*/
-					"xhdpi": "C:/Users/eric/Documents/Tencent Files/775340093/FileRecv/qidong.png", /*720P高分屏启动图片，分辨率：720x1242*/
-					"xxhdpi": "C:/Users/eric/Documents/Tencent Files/775340093/FileRecv/qidong.png"
+					"xhdpi": "img/qidong.png", /*720P高分屏启动图片，分辨率：720x1242*/
+					"xxhdpi": "img/qidong.png"
 				}
 			}
 		}
