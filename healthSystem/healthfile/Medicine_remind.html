@@ -18,17 +18,17 @@
 		</header>
 		<div class="mui-content">
 			<ul id="tixinglist" class="mui-table-view">
-				<li  class='mui-table-view-cell'>	
+				<!--<li class='mui-table-view-cell'>	
 					<div id='detail' class='mui-pull-left'>
 						<span class='mui-icon iconfont icon-yongyaotixing ul_t5' style='font-size: x-large;'></span>
-						<span style='border-right: 1px solid #C0C0C0;padding-right:5px ;'>06:00</span>
+						<span style='border-right: 1px solid #C0C0C0;padding-right:5px ;'>07:00</span>
 						<span style='color: #C0C0C0;font-size: smaller;'></span>
 					</div>
 					<div class='mui-switch mui-active mui-pull-right' style='left: 225px;'>
 						<div class='mui-switch-handle'></div>
 					</div>
 					<span id='' class='mui-icon  mui-icon-trash mui-pull-right' style='border-left: 1px solid #C0C0C0;padding-left: 5px;'></span>
-				</li>
+				</li>-->
 			</ul>
 			<div class="mui-row" style="margin-top:150px; ">
 				<div class="mui-col-xs-4 mui-col-sm-4">
@@ -46,44 +46,15 @@
 		<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init()
-//			mui('.mui-content .mui-switch').each(function() { //循环所有toggle
-//				//toggle.classList.contains('mui-active') 可识别该toggle的开关状态
-//				this.parentNode.querySelectorAll('span')[2].innerText = (this.classList.contains('mui-active') ? '已开启' : '已关闭');
-//				/**
-//				 * toggle 事件监听
-//				 */
-//				this.addEventListener('toggle', function(event) {
-//					//event.detail.isActive 可直接获取当前状态
-//					this.parentNode.querySelectorAll('span')[2].innerText = (event.detail.isActive ? '已开启' : '已关闭');
-//				});
-//			});
-			
-//			document.getElementById("del_remind").addEventListener('tap', function() {
-//				var btnArray = ['取消', '确认'];
-//				mui.confirm('确认删除用药提醒？', 'Hello MUI', btnArray, function(e) {
-//					if (e.index == 1) {
-//						mui.toast('已删除'); 
-//					} else {
-//						mui.toast('已取消'); 
-//					}
-//				})
-//			});
 			
 			addbtn = document.getElementById("add");
 			addbtn.addEventListener('tap',function(){
+				
 				mui.openWindow({
 					url:'Medicine_add_remind.html',
 					id:'Medicine_add_reminde'
 				})
 			})
-			
-//			detailbtn = document.getElementById("detail");
-//			detailbtn.addEventListener('tap',function(){
-//				mui.openWindow({
-//					url:'Medicine_detail.html',
-//					id:'Medicine_detail'
-//				})
-//			})
 			
 			//取提醒记录
 			mui.plusReady(function(){
@@ -96,12 +67,13 @@
 	  				type:'POST',
 	  				timeout:10000,
 	  				success:function(data){
+	  					//return false;
 	  					if(data.result!=0){
 	  						var s="";
 							for(var i=0;i<data.length;i++){
-								s+="<li  class='mui-table-view-cell'><div id='"+data[i].tixing_id+"' class='mui-pull-left'>";
+								s+="<li class='mui-table-view-cell'><div id='"+data[i].tixing_id+"' class='mui-pull-left'>";
 								s+="<span class='mui-icon iconfont icon-yongyaotixing ul_t5' style='font-size: x-large;'></span>";
-								s+="<span style='border-right: 1px solid #C0C0C0;padding-right:5px ;'>"+data[i].tixing_time+"</span>";
+								s+="<span style='border-right: 1px solid #C0C0C0;padding-right:5px;'>"+data[i].tixing_time+"</span>";
 								s+="<span style='color: #C0C0C0;font-size: smaller;'></span></div>";
 								s+="<div class='mui-switch mui-active mui-pull-right' style='left: 225px;'><div class='mui-switch-handle'></div></div>";
 								s+="<span id='"+data[i].tixing_id+"' class='mui-icon  mui-icon-trash mui-pull-right' style='border-left: 1px solid #C0C0C0;padding-left: 5px;'></span></li>";
@@ -109,6 +81,7 @@
 							}
 							var tixinglist =document.getElementById("tixinglist");
 							tixinglist.innerHTML = s;
+							mui('.mui-content .mui-switch')['switch']();
 	  					}else{
 	  						plus.ui.toast(data.data);
 	  					}
