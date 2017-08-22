@@ -6,6 +6,7 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/heathfile.css" />
 		<link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css" />
 	</head>
@@ -62,7 +63,13 @@
 				  dTime.setHours(6, 0);
 				  plus.nativeUI.pickTime(function(e) {
 				      var d = e.date;
-				      show_time.innerText = d.getHours() + ":" + d.getMinutes();
+				      var min = null;
+				      if(d.getMinutes()<10){
+				      	min = '0' + d.getMinutes();
+				      }else{
+				      	min = d.getMinutes();
+				      }
+				      show_time.innerText = d.getHours() + ":" + min;
 				  }, function(e) {
 				      mui.toast("您没有选择时间");
 				  }, {

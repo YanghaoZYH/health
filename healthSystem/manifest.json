@@ -345,7 +345,10 @@
 					"img/hos.jpg",
 					"js/immersed.js",
 					"img/search1.png",
-					"img/jkzx.jpg"
+					"img/jkzx.jpg",
+					"js/mui.picker.min.js",
+					"js/city.data.js",
+					"css/mui.picker.min.css"
 				],
 				"refer": [
 					"main/hosHP.html",
@@ -358,7 +361,8 @@
 					"finddoctor/doclist.html",
 					"finddoctor/findhos.html",
 					"finddoctor/search_hos.html",
-					"information/health_information.html"
+					"information/health_information.html",
+					"finddoctor/test.html"
 				],
 				"priority": 0
 			},
@@ -430,7 +434,8 @@
 					"healthfile/know_contents.html",
 					"healthfile/medDiary2.html",
 					"healthfile/Family_history.html",
-					"healthfile/file_all.html"
+					"healthfile/file_all.html",
+					"healthfile/Medicine_remind.html"
 				],
 				"priority": 0
 			},
@@ -875,7 +880,8 @@
 					"css/mui.calendar.css",
 					"js/mui.picker.min.js",
 					"css/iconfont_account.css",
-					"js/common.js"
+					"js/common.js",
+					"css/app.css"
 				],
 				"refer": [
 					"healthfile/write_diary.html",
@@ -1537,6 +1543,51 @@
 				],
 				"refer": [
 					"healthfile/know_contents.html"
+				],
+				"priority": 0
+			},
+			"healthfile/Medicine_remind.html": {
+				"resources": [
+					"js/common.js",
+					"img/add.png",
+					"js/mui.min.js",
+					"css/app.css",
+					"css/iconfont_health_file.css",
+					"css/mui.min.css",
+					"css/heathfile.css"
+				],
+				"refer": [
+					"healthfile/Medicine_add_remind.html"
+				],
+				"priority": 0
+			},
+			"healthfile/Medicine_add_remind.html": {
+				"resources": [
+					"js/common.js",
+					"js/mui.picker.min.js",
+					"js/mui.min.js",
+					"css/app.css",
+					"css/mui.min.css",
+					"css/mui.picker.min.css",
+					"css/heathfile.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"finddoctor/test.html": {
+				"resources": [
+					"css/find_doctor.css",
+					"js/common.js",
+					"js/mui.min.js",
+					"css/app.css",
+					"css/mui.min.css",
+					"css/health_file.css",
+					"css/iconfont_se.css",
+					"css/search_info.css",
+					"css/iconfont_money.css"
+				],
+				"refer": [
+					"finddoctor/docHP.html"
 				],
 				"priority": 0
 			}

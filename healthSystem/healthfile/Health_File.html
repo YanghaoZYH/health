@@ -41,9 +41,9 @@
 					</a>
 				</li>
 				<li class="mui-table-view-cell mui-media mui-col-xs-4 ">
-					<a href="#" id="friendfile">
-						<span class="mui-icon iconfont icon-group ul_t4"></span>
-						<div class="mui-media-body">亲友档案</div>
+					<a href="#" id="tixing">
+						<span class="mui-icon iconfont icon-yongyaotixing ul_t4"></span>
+						<div class="mui-media-body">用药提醒</div>
 					</a>
 				</li>
 				<li class="mui-table-view-cell mui-media mui-col-xs-4">
@@ -68,6 +68,7 @@
 		<script type="text/javascript">
 			mui.plusReady(function() {});
 			mui.init({
+
 //				pullRefresh: {
 //					container: "#pullrefresh", //下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
 //					auto: true,
@@ -99,6 +100,7 @@
 //						}
 //					}
 //				}
+
 			});
 //			//获取健康知识列表
 //			mui.get('http://' + serverName + '/health/management/Application/index.php/Connector/User/getKnowList', {
@@ -140,7 +142,7 @@
 			var record = document.getElementById('record');
 			var history_todoc = document.getElementById('history_todoc');
 			var myfile = document.getElementById('myfile');
-			var friendfile = document.getElementById('friendfile');
+			var tixing = document.getElementById('tixing');
 			var health_record = document.getElementById('health_record');
 			var family_history = document.getElementById('family_history');
 			record.addEventListener('tap', function(event) {
@@ -181,10 +183,10 @@
 					}
 				});
 			}, false);
-			friendfile.addEventListener('tap', function(event) {
+			tixing.addEventListener('tap', function(event) {
 				mui.openWindow({
-					url: 'Friends_file.html',
-					id: 'Friends_file',
+					url: 'Medicine_remind.html',
+					id: 'Medicine_remind',
 					show: {
 						aniShow: 'pop-in'
 					},
