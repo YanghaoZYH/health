@@ -23,6 +23,7 @@
 			}],
 		});
 		mui.plusReady(function() {
+			plus.nativeUI.showWaiting();
 			var self = plus.webview.currentWebview();
 			var depID = self.depID;
 			//从疾病详情页面跳转过来
