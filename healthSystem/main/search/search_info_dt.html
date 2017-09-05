@@ -23,7 +23,7 @@
 				var self = plus.webview.currentWebview();
 				var searchtext = self.searchtext;
 				//查询医生
-				mui.post('http://'+serverName+'/health/management/application/index.php/Connector/Search/searchdoc',{
+				mui.post('http://'+serverName+'/health/management/Application/index.php/Connector/Search/searchdoc',{
 						searchtext:searchtext
 					},function(data){
 						if(data.result!=0){

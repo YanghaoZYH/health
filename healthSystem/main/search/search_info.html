@@ -31,7 +31,7 @@
 				var self = plus.webview.currentWebview();
 				var searchtext = self.searchtext;
 				//查询医院
-				mui.post('http://'+serverName+'/health/management/application/index.php/Connector/Search/searchhos',{
+				mui.post('http://'+serverName+'/health/management/Application/index.php/Connector/Search/searchhos',{
 						searchtext:searchtext
 					},function(data){
 						if(data.result!=0){
@@ -78,7 +78,7 @@
 				}); 
 				
 				//查询医生
-				mui.post('http://'+serverName+'/health/management/application/index.php/Connector/Search/searchdoc',{
+				mui.post('http://'+serverName+'/health/management/Application/index.php/Connector/Search/searchdoc',{
 						searchtext:searchtext
 					},function(data){
 						if(data.result!=0){
@@ -127,7 +127,7 @@
 				}); 
 				
 				//查询科室
-				mui.post('http://'+serverName+'/health/management/application/index.php/Connector/Search/searchdep',{
+				mui.post('http://'+serverName+'/health/management/Application/index.php/Connector/Search/searchdep',{
 						searchtext:searchtext
 					},function(data){
 						if(data.result!=0){
@@ -173,7 +173,7 @@
 				}); 
 				
 				//查询疾病
-				mui.post('http://'+serverName+'/health/management/application/index.php/Connector/Search/search_illness',{
+				mui.post('http://'+serverName+'/health/management/Application/index.php/Connector/Search/search_illness',{
 						searchtext:searchtext
 					},function(data){
 						if(data.result!=0){
