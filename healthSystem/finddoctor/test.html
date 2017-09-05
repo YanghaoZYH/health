@@ -62,10 +62,11 @@
 		<script type="text/javascript">
 			var user_phone = null;
 			mui.plusReady(function() {
-				var user_phone = plus.storage.getItem('user_phone');
+				user_phone = plus.storage.getItem('user_phone');
 			});
 			
 	    	mui.init({
+	    		
 	    		preloadPages:[{
 	    			url:'docHP.html',
 	    			id:'docHP'
@@ -139,6 +140,26 @@
 					doclist.innerHTML = s;
 					},'json'
 				);
+				
+				//批量监听医生列表点击
+				var docHP = null;
+				mui('#doclist').on('tap', '.mui-table-view-cell', function() {
+					var docID = this.getAttribute('id');
+					//获得医生详情页面
+					if(!docHP){
+						docHP = plus.webview.getWebviewById('docHP.html');
+					}
+					//通知自定义事件
+					mui.fire(docHP,'docID',{
+						docID:docID
+					});
+					mui.openWindow({
+						id:'docHP.html',
+						show:{
+							aniShow:'pop-in'
+						}
+					});
+					});
 			});
 
 	</script>
