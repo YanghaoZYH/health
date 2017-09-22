@@ -7,10 +7,9 @@ class DocController extends Controller{
 	//获得热门医生列表
 	public function getHotDoc(){
     	$model = D('Admin/doctor_info');
-        $ic = C('IMAGE_CONFIG');
-    	//$data = $model -> getHotDoc();
+        $ic = C('IMAGE_CONFIG'); 
     	 /*排序*/
-        $orderby = "doc_attention";
+        $orderby = "doc_R";
         $orderway = "desc";
     	$data = $model
     	->field('a.*,b.hos_name')
@@ -20,10 +19,12 @@ class DocController extends Controller{
         for ($i=0; $i <count($data) ; $i++) { 
             $data[$i]['doc_img'] = $ic['viewPath'].$data[$i]['doc_img'];
         }
-    	dump($data);die;
+    	//dump($data);die;
     	echo json_encode($data);
+		
     }
 
+	
     //获得医生详情
     public function getDocDetail(){
         $doc_id = I('get.doc_id');

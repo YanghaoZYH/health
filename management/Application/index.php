@@ -5,8 +5,8 @@ define("APP_DEBUG", true);
 //define('APP_PATH','/Application/index.php/Admin/index/index');
 
 //define("SITE_URL", "http://172.17.32.90:88");
-//define("SITE_URL", "http://114.115.223.182:80");
-define("SITE_URL", "http://192.168.0.59");
+define("SITE_URL", "http://114.115.223.182:80");
+//define("SITE_URL", "http://10.77.117.237");
 
 define("CSS_URL", "/health/management/Application/Public/Home/css/");
 define("IMAGES_URL", SITE_URL . "/health/management/Application/Public/Home/images/");
