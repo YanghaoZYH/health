@@ -28,9 +28,9 @@
 </style>
 </head>
 <body>
-<form method="post" action="/health/management/Application/index.php/Admin/hospital/listDep/hos_id/56" id="listform">
+<form method="post" action="/health/management/Application/index.php/Admin/hospital/listDep/hos_id/55" id="listform">
   <div class="panel admin-panel">
-    <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong></div>
+    <!-- <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong></div> -->
     <div class="padding border-bottom">
       <ul class="search" style="padding-left:10px;">
         <li> <a class="button border-green icon-plus-square-o" href="/health/management/Application/index.php/Admin/hospital/addDep/hos_id/<?php echo I('get.hos_id'); ?>"> 添加科室</a></li>

@@ -4,7 +4,10 @@ namespace Connector\Controller;
 use Think\Controller;
 
 class ChufangController extends Controller{
-	public function set_chufang(){
+    /**
+     *
+     */
+    public function set_chufang(){
 		$data['doc_phone']=I('post.doc_phone');
 		$data['user_phone']=I('post.user_phone');
 		$data['zhenduan']=I('post.zhenduan');

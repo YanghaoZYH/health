@@ -25,12 +25,12 @@
 </head>
 <body>
 <!-- 搜索表单 -->
-<form method="get" action="/index.php/Admin/Relative/listRela" id="searchForm">
+<form method="get" action="/health/management/Application/index.php/Admin/Relative/listRela" id="searchForm">
   <div class="panel admin-panel">
     
     <div class="padding border-bottom">
       <ul class="search" style="padding-left:10px;">
-        <li> <a class="layui-btn layui-btn-primary" href="/index.php/Admin/Relative/add/user_id/<?php echo I('get.user_id'); ?>"><i class="layui-icon">&#xe654;</i> 添加</a> </li>
+        <li> <a class="layui-btn layui-btn-primary" href="/health/management/Application/index.php/Admin/Relative/add/user_id/<?php echo I('get.user_id'); ?>"><i class="layui-icon">&#xe654;</i> 添加</a> </li>
         <li style="margin-left: 500px">
           <input type="text" placeholder="请输入手机号" name="searchValue" class="input" style="width:250px; line-height:17px;display:inline-block" value="<?php echo I('get.searchValue'); ?>" />
           <a class="layui-btn layui-btn" style="cursor:pointer" onclick="$('#searchForm').submit()"><i class="layui-icon">&#xe615;</i>  搜索</a>
@@ -67,9 +67,9 @@
           <td><?php echo $v['relative_date']?$v['relative_date']:'<p style="color:#A2A0A0">暂无</p>'; ?></td>
           <td><?php echo $v['create_time']; ?></td>
           <td><div class="button-group">
-          <a class="layui-btn layui-btn layui-btn-mini" style="cursor:pointer" href="/index.php/Admin/Relative/edit/relative_id/<?php echo $v['relative_id']; ?>"><i class="layui-icon">&#xe642;</i>　修　改</a> 
+          <a class="layui-btn layui-btn layui-btn-mini" style="cursor:pointer" href="/health/management/Application/index.php/Admin/Relative/edit/relative_id/<?php echo $v['relative_id']; ?>"><i class="layui-icon">&#xe642;</i>　修　改</a> 
           <a class="layui-btn layui-btn-danger layui-btn-mini" style="cursor:pointer" style="cursor:pointer" onclick="del(<?php echo $v['relative_id']; ?>)"><i class="layui-icon">&#xe640;</i>　删　除</a></br>
-          <a style="margin-right: 85px;margin-top: 5px" class="layui-btn layui-btn-normal layui-btn-mini" href="/index.php/Admin/HistoryVis/listHis/user_id/<?php echo $v['user_id']; ?>/relative_id/<?php echo $v['relative_id']; ?>"><i class="layui-icon">&#xe63c;</i>历史就诊</a>
+          <a style="margin-right: 85px;margin-top: 5px" class="layui-btn layui-btn-normal layui-btn-mini" href="/health/management/Application/index.php/Admin/HistoryVis/listHis/user_id/<?php echo $v['user_id']; ?>/relative_id/<?php echo $v['relative_id']; ?>"><i class="layui-icon">&#xe63c;</i>历史就诊</a>
           </div></td>
         </tr>
     <?php endforeach; ?>
@@ -106,7 +106,7 @@ function showDialog(id) {
 //单个删除
 function del(relative_id){
 	if(confirm("您确定要删除吗?")){
-		window.location="/index.php/Admin/Relative/delete/relative_id/"+relative_id;
+		window.location="/health/management/Application/index.php/Admin/Relative/delete/relative_id/"+relative_id;
 	}
 }
 

@@ -25,12 +25,12 @@
 </head>
 <body>
 <!-- 搜索表单 -->
-<form method="get" action="/index.php/Admin/HistoryVis/listHis" id="searchForm">
+<form method="get" action="/health/management/Application/index.php/Admin/HistoryVis/listHis" id="searchForm">
   <div class="panel admin-panel">
     <!-- <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong></div> -->
     <div class="padding border-bottom">
       <ul class="search" style="padding-left:10px;">
-        <li> <a class="layui-btn layui-btn-primary" href="/index.php/Admin/HistoryVis/add/user_id/<?php echo I('get.user_id'); ?>/relative_id/<?php echo I('get.relative_id'); ?>"><i class="layui-icon">&#xe654;</i> 添加</a> </li>
+        <li> <a class="layui-btn layui-btn-primary" href="/health/management/Application/index.php/Admin/HistoryVis/add/user_id/<?php echo I('get.user_id'); ?>/relative_id/<?php echo I('get.relative_id'); ?>"><i class="layui-icon">&#xe654;</i> 添加</a> </li>
         <li style="margin-left: 500px">
           <input type="text" placeholder="请输入手机号" name="searchValue" class="input" style="width:250px; line-height:17px;display:inline-block" value="<?php echo I('get.searchValue'); ?>" />
           <!-- <a href="javascript:void(0)" class="button border-green icon-search" onclick="$('#submit').click()" > 搜索</a> -->
@@ -67,8 +67,8 @@
           <td><?php echo $v['seecase_time']; ?></td>
           <td><div class="button-group">
           <a class="layui-btn layui-btn-primary layui-btn-mini" style="cursor:pointer" onclick="showDialog(<?php echo $v['seecase_id']; ?>)"><i class="layui-icon">&#xe615;</i> 详情</a>
-          <a class="layui-btn layui-btn layui-btn-mini" href="/index.php/Admin/HistoryVis/edit/seecase_id/<?php echo $v['seecase_id']; ?>/user_id/<?php echo $v['user_id']; ?>/relative_id/<?php echo I('get.relative_id'); ?>"><i class="layui-icon">&#xe642;</i> 修改</a> 
-          <a class="layui-btn layui-btn-danger layui-btn-mini" href="/index.php/Admin/HistoryVis/delete/seecase_id/<?php echo $v['seecase_id']; ?>/user_id/<?php echo I('get.user_id'); ?>/relative_id/<?php echo I('get.relative_id'); ?>"><i class="layui-icon">&#xe640;</i> 删除</a> 
+          <a class="layui-btn layui-btn layui-btn-mini" href="/health/management/Application/index.php/Admin/HistoryVis/edit/seecase_id/<?php echo $v['seecase_id']; ?>/user_id/<?php echo $v['user_id']; ?>/relative_id/<?php echo I('get.relative_id'); ?>"><i class="layui-icon">&#xe642;</i> 修改</a> 
+          <a class="layui-btn layui-btn-danger layui-btn-mini" href="/health/management/Application/index.php/Admin/HistoryVis/delete/seecase_id/<?php echo $v['seecase_id']; ?>/user_id/<?php echo I('get.user_id'); ?>/relative_id/<?php echo I('get.relative_id'); ?>"><i class="layui-icon">&#xe640;</i> 删除</a> 
           </div></td>
           <td colspan="0">
           	<!-- 详情页面 -->
@@ -178,7 +178,7 @@ function showDialog(id) {
 //单个删除
 function del(seecase_id,user_id,relative_id){
 	if(confirm("您确定要删除吗?")){
-		window.location="/index.php/Admin/HistoryVis/delete/seecase_id/"+seecase_id+"/user_id/"+user_id+"/relative_id/"+relative_id;
+		window.location="/health/management/Application/index.php/Admin/HistoryVis/delete/seecase_id/"+seecase_id+"/user_id/"+user_id+"/relative_id/"+relative_id;
 	}
 }
 
