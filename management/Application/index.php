@@ -8,6 +8,7 @@ define("APP_DEBUG", true);
 //define("SITE_URL", "http://114.115.223.182:80");
 define("SITE_URL", "http://localhost");
 
+
 define("CSS_URL", "/health/management/Application/Public/Home/css/");
 define("IMAGES_URL", SITE_URL . "/health/management/Application/Public/Home/images/");
 define("JS_URL", SITE_URL . "/health/management/Application/Public/Home/js/");

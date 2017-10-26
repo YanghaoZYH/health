@@ -20,9 +20,9 @@ define('MASTERSECRET','ztLAA3yBp86MVqiWI3lYN9');
 //把患者的CID查询出来
 $doc_phone = $_POST['doc_phone'];
 $user_phone = $_POST['user_phone'];
-$mysql_server_name="localhost"; //数据库服务器名称
+$mysql_server_name="127.0.0.1"; //数据库服务器名称
 $mysql_username="root"; // 连接数据库用户名
-$mysql_password="root"; // 连接数据库密码
+$mysql_password="qwe254511"; // 连接数据库密码
 $mysql_database="healthsystem"; // 数据库的名字
 
 // 连接到数据库

@@ -23,7 +23,7 @@
 				var self = plus.webview.currentWebview();
 				var searchtext = self.searchtext;
 				//查询医院
-				mui.post('http://'+serverName+'/health/management/application/index.php/Connector/Search/searchhos',{
+				mui.post('http://'+serverName+'/health/management/Application/index.php/Connector/Search/searchhos',{
 						searchtext:searchtext
 					},function(data){
 						if(data.result!=0){

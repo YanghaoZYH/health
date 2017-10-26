@@ -91,7 +91,7 @@
 				var diqu = self.diqu;
 				var dep_name = document.getElementById("dep_name");
 				//标题
-				mui.post('http://'+serverName+'/health/management/application/index.php/Connector/Depa/getdepname',{
+				mui.post('http://'+serverName+'/health/management/Application/index.php/Connector/Depa/getdepname',{
 						dep_id:dep_id
 				},function(data){
 						dep_name.innerHTML = data.dep_name;
@@ -100,7 +100,7 @@
 				
 				//融入医生绩效的获取医生列表
 				var doclist = document.getElementById("doclist");
-				mui.post('http://'+serverName+'/health/management/application/index.php/Connector/Tuijian/get_dep_doc',{
+				mui.post('http://'+serverName+'/health/management/Application/index.php/Connector/Tuijian/get_dep_doc',{
 						dep_id:dep_id,
 						diqu:diqu
 				},function(data){

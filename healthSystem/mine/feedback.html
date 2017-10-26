@@ -25,7 +25,7 @@
 				document.getElementById("submit").addEventListener('tap',function(){
 					var content = document.getElementById("question").value;
 			    	var contact = document.getElementById("contact").value;
-					mui.post('http://'+serverName+'/health/management/application/index.php/Connector/User/feedback',{
+					mui.post('http://'+serverName+'/health/management/Application/index.php/Connector/User/feedback',{
 							phone:phone,
 							feedb_content:content,
 							con_phone:contact

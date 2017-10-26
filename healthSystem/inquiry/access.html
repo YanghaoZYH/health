@@ -26,7 +26,7 @@
 			    var user_phone = plus.storage.getItem('user_phone');
 				document.getElementById("submit").addEventListener('tap',function(){
 					var pingjia_text = document.getElementById("advice").value;
-					mui.post('http://'+serverName+'/health/management/application/index.php/Connector/User/set_pingjia',{
+					mui.post('http://'+serverName+'/health/management/Application/index.php/Connector/User/set_pingjia',{
 							user_phone:user_phone,
 							doc_phone:doc_phone,
 							pingjia_text:pingjia_text

@@ -70,7 +70,9 @@
     <?php 
         echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="__MODULE__/feedback/listFeedb" target="right"><span class="icon-caret-right"></span>意见反馈</a></li>');
     ?> 
-
+	<?php 
+        echo authCheck(MODULE_NAME.'/Relative/listRela',cookie('id'),'<li><a href="__MODULE__/feedback/Math" target="right"><span class="icon-caret-right"></span>算法介绍</a></li>');
+    ?> 
   </ul>
   <h2><span class="fa fa-id-badge"></span>权限管理</h2>
   <ul>

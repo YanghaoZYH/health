@@ -30,14 +30,15 @@
 <body>
 <form method="post" action="/health/management/Application/index.php/Admin/hospital/listHos.html" id="listform">
   <div class="panel admin-panel">
-    <!-- <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong></div> -->
+    <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong></div>
     <div class="padding border-bottom">
       <ul class="search" style="padding-left:10px;">
-        <li> <a class="layui-btn layui-btn-primary" href="/health/management/Application/index.php/Admin/Hospital/add"><i class="layui-icon">&#xe654;</i> 添加医院</a>
-        <a class="layui-btn layui-btn-normal" href="/health/management/Application/index.php/Admin/Hospital/uploadExcel"><i class="fa fa-hand-o-right" aria-hidden="true"></i> 批量导入</a> </li>
-        <li style="margin-left: 500px">
+        <li> <a class="button border-green icon-plus-square-o" href="/health/management/Application/index.php/Admin/Hospital/add"> 添加医院</a>
+        <a class="button border-green icon-plus-square-o" href="/health/management/Application/index.php/Admin/Hospital/uploadExcel"> 批量导入</a> </li>
+        <li>搜索：</li>
+        <li>
           <input type="text" placeholder="请输入搜索关键字" name="searchValue" class="input" style="width:250px; line-height:17px;display:inline-block" />
-          <a class="layui-btn layui-btn" style="cursor:pointer" onclick="$('#listform').submit()"><i class="layui-icon">&#xe615;</i>  搜索</a>
+          <a href="javascript:void(0)" class="button border-green icon-search" onclick="$('#listform').submit()" > 搜索</a></li>
       </ul>
     </div>
     <table class="table table-hover text-center">
@@ -49,22 +50,9 @@
         <th width="20%">详细地址</th>
         <th width="10%">创建时间</th>
         <th width="30%">操作</th>
-
       </tr>
-      <?php if(empty($data)): ?>
-      		<tr>
-      			<td></td>
-      			<td></td>
-      			<td></td>	
-      			<td></td>
-      			<td>
-      				<div style="padding:20px"><i class="layui-icon" style="font-size: 30px; color: #22CC77;">&#xe650;</i>空空如也~</div>
-      			</td>
-      		</tr>
-      <?php endif; ?>
     <?php foreach ($data as $k => $v): ?>
         <tr>
-
           <td style="text-align:left; padding-left:20px;"><input type="checkbox" name="hos_id[]" value="<?php echo $v['hos_id']; ?>"/><?php echo $v['hos_id']; ?></td>
           <td><?php echo $v['hos_name']; ?></td>
           <td><?php echo $v['hos_level']; ?></td>
@@ -126,9 +114,8 @@
        		</div>
           </td>
         </tr>
+        
     <?php endforeach; ?>
-    
-    	
       <tr>
         <td style="text-align:left; padding:19px 0;padding-left:20px;"><input type="checkbox" id="checkall"/>
           全选 </td>

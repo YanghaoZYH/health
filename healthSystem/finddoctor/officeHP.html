@@ -119,7 +119,7 @@
 				var dep_name_title = document.getElementById("dep_name_title");
 				var dep_name=document.getElementById("dep_name");
 				var dep_introduce=document.getElementById("dep_introduce");
-				mui.post('http://'+serverName+'/health/management/application/index.php/Connector/Depa/gethosdep',{
+				mui.post('http://'+serverName+'/health/management/Application/index.php/Connector/Depa/gethosdep',{
 						hos_id:hos_id,
 						dep_id:dep_id
 				},function(data){
@@ -132,7 +132,7 @@
 				
 				//医生列表
 				var doclist = document.getElementById("doclist");
-				mui.post('http://'+serverName+'/health/management/application/index.php/Connector/Depa/gethosdoc',{
+				mui.post('http://'+serverName+'/health/management/Application/index.php/Connector/Depa/gethosdoc',{
 						hos_id:hos_id,
 						dep_id:dep_id
 				},function(data){
